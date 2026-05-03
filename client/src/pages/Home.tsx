@@ -109,7 +109,7 @@ export default function Home() {
             The Gap Has A Name.
           </h2>
 
-          <div className="space-y-6 text-gray-300 font-['DM_Sans'] leading-relaxed">
+          <div className="space-y-6 text-gray-300 font-['DM_Sans'] leading-relaxed text-center">
             <p>
               Someone finds your content.
               <br />
