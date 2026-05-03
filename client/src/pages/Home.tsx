@@ -41,14 +41,14 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left: Headline & Copy */}
             <div className="flex flex-col justify-center">
-              <div className="mb-6">
+              <div className="mb-6 text-center">
                 <p className="text-sm font-semibold tracking-widest text-[#ff2d2d] uppercase mb-4">
                   For coaches and personal brands getting attention but not clients
                 </p>
               </div>
 
               <h1
-                className="font-['Bebas_Neue'] text-5xl lg:text-6xl font-bold leading-tight mb-8"
+                className="font-['Bebas_Neue'] text-5xl lg:text-6xl font-bold leading-tight mb-8 text-center"
                 style={{ letterSpacing: "0.52px" }}
               >
                 Your Content Is Working.
@@ -56,7 +56,7 @@ export default function Home() {
                 Your Pipeline Isn't.
               </h1>
 
-              <p className="text-lg text-gray-300 mb-8 leading-relaxed font-['DM_Sans']">
+              <p className="text-lg text-gray-300 mb-8 leading-relaxed font-['DM_Sans'] text-center">
                 I find the exact point where your funnel stops converting people who were already
                 ready to buy — and I fix it.
               </p>
@@ -64,7 +64,7 @@ export default function Home() {
               <form onSubmit={handleSubmit} className="flex flex-col gap-3 mb-4">
                 <Input
                   type="email"
-                  placeholder="Drop your email and I'll be in touch within 24 hours"
+                  placeholder="Enter email here"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
@@ -165,7 +165,7 @@ export default function Home() {
             What I Actually Do
           </h2>
 
-          <div className="space-y-6 text-gray-300 font-['DM_Sans'] leading-relaxed mb-16">
+          <div className="space-y-6 text-gray-300 font-['DM_Sans'] leading-relaxed mb-16 text-center">
             <p>
               I don't rewrite your content.
               <br />
