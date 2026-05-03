@@ -1,7 +1,7 @@
 import { COOKIE_NAME } from "@shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
-import { publicProcedure, router } from "./_core/trpc";
+import { publicProcedure, router, adminProcedure } from "./_core/trpc";
 import { z } from "zod";
 import { submitLead, getLeads } from "./db";
 
@@ -27,6 +27,9 @@ export const appRouter = router({
         return { success: true };
       }),
     getAll: publicProcedure.query(async () => {
+      return await getLeads();
+    }),
+    getAllAdmin: adminProcedure.query(async () => {
       return await getLeads();
     }),
   }),
