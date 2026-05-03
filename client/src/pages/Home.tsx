@@ -1,7 +1,10 @@
+import { useAuth } from "@/_core/hooks/useAuth";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { trpc } from "@/lib/trpc";
+import { toast } from "sonner";
 
 /**
  * DESIGN SYSTEM - @samthecopypro Conversion Leak Audit
@@ -22,14 +25,28 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
+  // tRPC mutation to submit email to database
+  const submitEmailMutation = trpc.leads.submitEmail.useMutation({
+    onSuccess: () => {
+      toast.success("Thanks! Check your email within 24 hours.");
       setEmail("");
-      setTimeout(() => setSubmitted(false), 3000);
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to submit email. Please try again.");
+    },
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+
+    setIsSubmitting(true);
+    try {
+      await submitEmailMutation.mutateAsync({ email });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -68,13 +85,15 @@ export default function Home() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
+                  disabled={isSubmitting}
                   className="bg-[#1a1a2e] border-[#1a1a2e] text-white placeholder:text-gray-500 rounded-lg py-3 px-4"
                 />
                 <Button
                   type="submit"
-                  className="bg-[#ff2d2d] hover:bg-[#e62626] text-white font-bold py-3 px-6 rounded-lg w-full transition-all"
+                  disabled={isSubmitting}
+                  className="bg-[#ff2d2d] hover:bg-[#e62626] text-white font-bold py-3 px-6 rounded-lg w-full transition-all disabled:opacity-50"
                 >
-                  Get My Free Funnel Audit
+                  {isSubmitting ? "Submitting..." : "Get My Free Funnel Audit"}
                 </Button>
               </form>
 
@@ -374,26 +393,19 @@ export default function Home() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              disabled={isSubmitting}
               className="bg-[#1a1a2e] border-[#1a1a2e] text-white placeholder:text-gray-500 rounded-lg py-4 px-4 text-base"
             />
             <Button
               type="submit"
-              className="bg-[#ff2d2d] hover:bg-[#e62626] text-white font-bold py-4 px-6 rounded-lg w-full transition-all text-lg"
+              disabled={isSubmitting}
+              className="bg-[#ff2d2d] hover:bg-[#e62626] text-white font-bold py-4 px-6 rounded-lg w-full transition-all text-lg disabled:opacity-50"
             >
-              Get My Free Funnel Audit
+              {isSubmitting ? "Submitting..." : "Get My Free Funnel Audit"}
             </Button>
           </form>
 
           <p className="text-xs text-gray-500">Takes 30 seconds. No spam. Ever.</p>
-
-          {submitted && (
-            <div className="mt-6 p-4 bg-[#1a1a2e] rounded-lg border border-[#ff2d2d]">
-              <p className="text-[#ff2d2d] font-semibold flex items-center justify-center gap-2">
-                <CheckCircle2 className="w-5 h-5" />
-                Thanks! Check your email within 24 hours.
-              </p>
-            </div>
-          )}
         </div>
       </section>
 
