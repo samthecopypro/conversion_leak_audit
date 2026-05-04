@@ -1,10 +1,6 @@
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { trpc } from "@/lib/trpc";
-import { toast } from "sonner";
+import { ArrowRight } from "lucide-react";
+import MailerLiteForm from "@/components/MailerLiteForm";
 
 /**
  * DESIGN SYSTEM - @samthecopypro Conversion Leak Audit
@@ -24,31 +20,6 @@ import { toast } from "sonner";
  */
 
 export default function Home() {
-  const [email, setEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // tRPC mutation to submit email to database
-  const submitEmailMutation = trpc.leads.submitEmail.useMutation({
-    onSuccess: () => {
-      toast.success("Thanks! Check your email within 24 hours.");
-      setEmail("");
-    },
-    onError: (error: any) => {
-      toast.error(error.message || "Failed to submit email. Please try again.");
-    },
-  });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-
-    setIsSubmitting(true);
-    try {
-      await submitEmailMutation.mutateAsync({ email });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
@@ -78,24 +49,9 @@ export default function Home() {
                 ready to buy — and I fix it.
               </p>
 
-              <form onSubmit={handleSubmit} className="flex flex-col gap-3 mb-4">
-                <Input
-                  type="email"
-                  placeholder="Enter email here"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  disabled={isSubmitting}
-                  className="bg-[#1a1a2e] border-[#1a1a2e] text-white placeholder:text-gray-500 rounded-lg py-3 px-4"
-                />
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="bg-[#ff2d2d] hover:bg-[#e62626] text-white font-bold py-3 px-6 rounded-lg w-full transition-all disabled:opacity-50"
-                >
-                  {isSubmitting ? "Submitting..." : "Get My Free Funnel Audit"}
-                </Button>
-              </form>
+              <div className="mb-4">
+                <MailerLiteForm variant="hero" />
+              </div>
 
               <p className="text-xs text-gray-500 text-center">
                 Takes 30 seconds. No spam. Ever.
@@ -386,24 +342,9 @@ export default function Home() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 mb-4">
-            <Input
-              type="email"
-              placeholder="Your email address"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              disabled={isSubmitting}
-              className="bg-[#1a1a2e] border-[#1a1a2e] text-white placeholder:text-gray-500 rounded-lg py-4 px-4 text-base"
-            />
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-[#ff2d2d] hover:bg-[#e62626] text-white font-bold py-4 px-6 rounded-lg w-full transition-all text-lg disabled:opacity-50"
-            >
-              {isSubmitting ? "Submitting..." : "Get My Free Funnel Audit"}
-            </Button>
-          </form>
+          <div className="mb-4">
+            <MailerLiteForm variant="cta" />
+          </div>
 
           <p className="text-xs text-gray-500">Takes 30 seconds. No spam. Ever.</p>
         </div>
