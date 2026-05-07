@@ -1035,3 +1035,91 @@ footer {
     transform: rotate(360deg);
   }
 }
+
+
+/* ========================================
+   STICKY SMART HEADER
+   ======================================== */
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 45, 45, 0.2);
+  z-index: 1000;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.sticky-header.show {
+  transform: translateY(0);
+}
+
+.sticky-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sticky-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.sticky-cta-btn {
+  background-color: #ff2d2d;
+  color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-family: 'Inter', Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 45, 45, 0.3);
+}
+
+.sticky-cta-btn:hover {
+  background-color: #e62626;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.6), 0 0 40px rgba(255, 45, 45, 0.3);
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+.sticky-cta-btn:active {
+  transform: scale(0.98);
+}
+
+/* Mobile: Hide sticky header on very small screens */
+@media (max-width: 480px) {
+  .sticky-header-content {
+    padding: 0.75rem 1rem;
+  }
+
+  .sticky-logo {
+    font-size: 1rem;
+  }
+
+  .sticky-cta-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Tablet: Adjust spacing */
+@media (max-width: 768px) {
+  .sticky-header-content {
+    padding: 0.9rem 1.2rem;
+  }
+}
