@@ -4,7 +4,43 @@
    ======================================== */
 
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Bebas+Neue&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(255, 45, 45, 0.5), 0 0 40px rgba(255, 45, 45, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 45, 45, 0.7), 0 0 60px rgba(255, 45, 45, 0.4);
+  }
+}
+
+@keyframes floatBlob {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(30px, -30px);
+  }
+  66% {
+    transform: translate(-20px, 20px);
+  }
+}
 
 /* ========================================
    RESET & BASE STYLES
@@ -21,11 +57,26 @@ html {
 }
 
 body {
-  font-family: 'DM Sans', Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   background-color: #0a0a0f;
   color: #ffffff;
   line-height: 1.6;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 45, 45, 0.08) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(26, 26, 46, 0.1) 0%, transparent 50%);
+  animation: floatBlob 20s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
 }
 
 /* ========================================
@@ -33,9 +84,9 @@ body {
    ======================================== */
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Bebas Neue', Arial, sans-serif;
-  letter-spacing: 0.52px;
-  font-weight: 400;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: 0.08em;
+  font-weight: 600;
 }
 
 h1 {
@@ -134,6 +185,13 @@ section {
 
 .hero-form-wrapper {
   margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
 }
 
 .hero-disclaimer {
@@ -146,6 +204,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  animation: fadeInUp 0.8s ease-out 0.4s both;
 }
 
 .hero-image {
@@ -162,6 +221,7 @@ section {
 .problem {
   background-color: #1a1a2e;
   padding: 6rem 1rem;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .problem-content {
@@ -206,6 +266,7 @@ section {
 .mechanism {
   background-color: #0a0a0f;
   padding: 6rem 1rem;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .mechanism-content {
@@ -278,6 +339,7 @@ section {
 .social-proof {
   background-color: #1a1a2e;
   padding: 6rem 1rem;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .social-proof-content {
@@ -337,6 +399,7 @@ section {
 .qualification {
   background-color: #0a0a0f;
   padding: 6rem 1rem;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .qualification-content {
@@ -388,6 +451,7 @@ section {
 .final-cta {
   background: linear-gradient(to bottom, #0a0a0f, #1a1a2e);
   padding: 8rem 1rem;
+  animation: fadeInUp 0.8s ease-out both;
 }
 
 .final-cta-content {
@@ -582,8 +646,9 @@ footer {
 
 #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button:hover {
   background-color: #e62626;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 45, 45, 0.2);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.6), 0 0 40px rgba(255, 45, 45, 0.3), 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: glowPulse 1.5s ease-in-out infinite;
 }
 
 #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button:active {
@@ -924,8 +989,9 @@ footer {
 
 #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button:hover {
   background-color: #e62626;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(255, 45, 45, 0.2);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 45, 45, 0.6), 0 0 40px rgba(255, 45, 45, 0.3), 0 10px 20px rgba(0, 0, 0, 0.3);
+  animation: glowPulse 1.5s ease-in-out infinite;
 }
 
 #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button:active {
