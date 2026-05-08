@@ -1,15 +1,15 @@
 import { useEffect } from 'react';
 
 /**
- * MailerLite Form Component
- * Integrates MailerLite embed form with custom styling to match the landing page design system
+ * MailerLite Form Component - BRIGHT PREMIUM 3D THEME
+ * Integrates MailerLite embed form with bright theme styling
  * 
  * Design System Integration:
- * - Background: #0a0a0f (deep navy)
- * - Accent: #ff2d2d (electric red)
- * - Input: #1a1a2e (secondary background)
- * - Text: #ffffff (white)
- * - Fonts: Bebas Neue (headlines), DM Sans (body)
+ * - Background: White (#ffffff)
+ * - Text: Deep charcoal (#1a202c, #0f172a)
+ * - Accent: Sky blue (#3b82f6)
+ * - Input: Light blue (#f8f9fb)
+ * - Fonts: Playfair Display (headlines), Inter (body)
  */
 
 interface MailerLiteFormProps {
@@ -42,7 +42,7 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
   return (
     <div className={`mailerlite-form-wrapper ${variant} ${className}`}>
       <style>{`
-        /* MailerLite Form Custom Styling */
+        /* MailerLite Form Custom Styling - BRIGHT PREMIUM 3D */
         #mlb2-40775934.ml-form-embedContainer {
           box-sizing: border-box;
           display: table;
@@ -75,19 +75,19 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4 {
-          color: #ffffff;
-          font-family: 'Bebas Neue', Arial, sans-serif;
-          font-size: 30px;
-          font-weight: 400;
+          color: #1a202c;
+          font-family: 'Playfair Display', serif;
+          font-size: 28px;
+          font-weight: 600;
           margin: 0 0 10px 0;
           text-align: center;
           word-break: break-word;
-          letter-spacing: 0.52px;
+          letter-spacing: 0.08em;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p {
-          color: #d1d5db;
-          font-family: 'DM Sans', Arial, sans-serif;
+          color: #64748b;
+          font-family: 'Inter', Arial, sans-serif;
           font-size: 14px;
           font-weight: 400;
           line-height: 20px;
@@ -96,13 +96,13 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input {
-          background-color: #1a1a2e !important;
-          color: #ffffff !important;
-          border-color: #1a1a2e;
-          border-radius: 8px !important;
+          background-color: #f8f9fb !important;
+          color: #1a202c !important;
+          border-color: rgba(59, 130, 246, 0.2);
+          border-radius: 6px !important;
           border-style: solid !important;
           border-width: 1px !important;
-          font-family: 'DM Sans', Arial, sans-serif;
+          font-family: 'Inter', Arial, sans-serif;
           font-size: 14px !important;
           height: auto;
           line-height: 21px !important;
@@ -118,40 +118,40 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input:focus {
-          background-color: #1a1a2e !important;
-          border-color: #ff2d2d !important;
+          background-color: #ffffff !important;
+          border-color: #3b82f6 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(255, 45, 45, 0.1);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::placeholder {
-          color: #6b7280;
+          color: #94a3b8;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder {
-          color: #6b7280;
+          color: #94a3b8;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder {
-          color: #6b7280;
+          color: #94a3b8;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder {
-          color: #6b7280;
+          color: #94a3b8;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder {
-          color: #6b7280;
+          color: #94a3b8;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow textarea {
-          background-color: #1a1a2e !important;
-          color: #ffffff !important;
-          border-color: #1a1a2e;
-          border-radius: 8px !important;
+          background-color: #f8f9fb !important;
+          color: #1a202c !important;
+          border-color: rgba(59, 130, 246, 0.2);
+          border-radius: 6px !important;
           border-style: solid !important;
           border-width: 1px !important;
-          font-family: 'DM Sans', Arial, sans-serif;
+          font-family: 'Inter', Arial, sans-serif;
           font-size: 14px !important;
           height: auto;
           line-height: 21px !important;
@@ -165,14 +165,14 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow textarea:focus {
-          background-color: #1a1a2e !important;
-          border-color: #ff2d2d !important;
+          background-color: #ffffff !important;
+          border-color: #3b82f6 !important;
           outline: none;
-          box-shadow: 0 0 0 3px rgba(255, 45, 45, 0.1);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow textarea::placeholder {
-          color: #6b7280;
+          color: #94a3b8;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow {
@@ -194,12 +194,12 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button {
-          background-color: #ff2d2d;
+          background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
           border: none;
-          border-radius: 8px;
+          border-radius: 6px;
           color: #ffffff;
           cursor: pointer;
-          font-family: 'DM Sans', Arial, sans-serif;
+          font-family: 'Inter', Arial, sans-serif;
           font-size: 16px;
           font-weight: 600;
           height: auto;
@@ -211,12 +211,13 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
           width: 100%;
           box-sizing: border-box;
           transition: all 0.3s ease;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button:hover {
-          background-color: #e62626;
+          background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
           transform: translateY(-2px);
-          box-shadow: 0 10px 20px rgba(255, 45, 45, 0.2);
+          box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedSubmit button:active {
@@ -246,7 +247,7 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
           margin: 1px;
           border-radius: 50%;
           border: 4px solid #fff;
-          border-color: #ffffff #ffffff #ffffff transparent;
+          border-color: #3b82f6 #3b82f6 #3b82f6 transparent;
           animation: ml-form-embedSubmitLoad 1.2s linear infinite;
         }
 
@@ -265,17 +266,17 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-successBody h4 {
-          color: #ffffff;
-          font-family: 'Bebas Neue', Arial, sans-serif;
+          color: #1a202c;
+          font-family: 'Playfair Display', serif;
           font-size: 24px;
-          font-weight: 400;
+          font-weight: 600;
           margin: 0 0 10px 0;
-          letter-spacing: 0.52px;
+          letter-spacing: 0.08em;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-successBody p {
-          color: #d1d5db;
-          font-family: 'DM Sans', Arial, sans-serif;
+          color: #64748b;
+          font-family: 'Inter', Arial, sans-serif;
           font-size: 14px;
           font-weight: 400;
           line-height: 20px;
@@ -285,7 +286,7 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         /* Responsive adjustments */
         @media screen and (max-width: 480px) {
           #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4 {
-            font-size: 24px;
+            font-size: 22px;
           }
 
           #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input,
@@ -303,79 +304,107 @@ export default function MailerLiteForm({ variant = 'hero', className = '' }: Mai
         /* Checkbox and radio styling */
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow .custom-control-label::before,
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before {
-          border-color: #1a1a2e !important;
-          background-color: #1a1a2e !important;
+          border-color: rgba(59, 130, 246, 0.2) !important;
+          background-color: #f8f9fb !important;
           border-radius: 4px !important;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow .custom-control-input:checked~.custom-control-label::before {
-          border-color: #ff2d2d !important;
-          background-color: #ff2d2d !important;
+          border-color: #3b82f6 !important;
+          background-color: #3b82f6 !important;
         }
 
         #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow label {
-          color: #d1d5db;
-          font-family: 'DM Sans', Arial, sans-serif;
+          color: #475569;
+          font-family: 'Inter', Arial, sans-serif;
           font-size: 14px;
-          font-weight: 400;
+          font-weight: 500;
+          margin-bottom: 8px;
+          display: block;
         }
 
-        .sr-only {
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          padding: 0;
-          margin: -1px;
-          overflow: hidden;
-          clip: rect(0,0,0,0);
-          border: 0;
+        /* Error state */
+        #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow.has-error input,
+        #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow.has-error textarea {
+          border-color: #ef4444 !important;
+        }
+
+        /* Success state */
+        #mlb2-40775934.ml-form-embedContainer .ml-form-successBody {
+          background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(191, 219, 254, 0.05) 100%);
+          border-radius: 8px;
+          padding: 24px;
+        }
+
+        /* Dropdown styling */
+        #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow select {
+          background-color: #f8f9fb !important;
+          color: #1a202c !important;
+          border-color: rgba(59, 130, 246, 0.2) !important;
+          border-radius: 6px !important;
+          border-style: solid !important;
+          border-width: 1px !important;
+          font-family: 'Inter', Arial, sans-serif;
+          font-size: 14px !important;
+          padding: 12px 16px !important;
+          width: 100% !important;
+          box-sizing: border-box !important;
+          transition: all 0.3s ease;
+        }
+
+        #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow select:focus {
+          background-color: #ffffff !important;
+          border-color: #3b82f6 !important;
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
       `}</style>
 
-      {/* MailerLite Form HTML - Embedded directly */}
-      <div id="mlb2-40775934" className="ml-form-embedContainer ml-subscribe-form-40775934">
-        <div className="ml-form-embedWrapper data-form-id">
-          <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
-            <div className="ml-form-embedContent" data-form-id>
-              <h4>Get Your Free Funnel Audit</h4>
-              <p>Drop your email below and I'll review your funnel within 24 hours.</p>
-            </div>
-            <form className="ml-block-form" action="https://assets.mailerlite.com/forms/submitted" method="post" data-code="w6z6l9" data-form="186512759014295403" data-chained="false">
-              <div className="ml-form-formContent">
-                <div className="ml-form-fieldRow ml-last-item">
-                  <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                    <input
-                      aria-label="email"
-                      aria-required="true"
-                      type="email"
-                      className="form-control"
-                      data-inputmask=""
-                      name="fields[email]"
-                      placeholder="Enter your best email here"
-                      autoComplete="email"
-                      required
-                    />
+      {/* MailerLite form will be injected here */}
+      <div
+        className="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40775934"
+        id="mlb2-40775934"
+      >
+        <div className="ml-form-align-center">
+          <div className="ml-form-embedWrapper embedForm">
+            <div className="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div className="ml-form-embedContent" style={{ marginBottom: "0px" }}>
+                <h4 style={{ marginBottom: "10px" }}>Get Your Free Audit</h4>
+                <p style={{ marginBottom: "20px" }}>
+                  Drop your email below. I'll review your funnel within 24 hours.
+                </p>
+              </div>
+              <form className="ml-block-form" action="javascript:void(0)" onSubmit={(e) => e.preventDefault()}>
+                <div className="ml-form-formContent">
+                  <div className="ml-form-fieldRow ml-last-item">
+                    <div className="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input
+                        type="email"
+                        className="ml-form-fieldInputText"
+                        data-inputmask=""
+                        placeholder="Enter your best email here"
+                        defaultValue=""
+                      />
+                    </div>
                   </div>
                 </div>
+                <div className="ml-form-embedSubmit">
+                  <button type="submit" className="primary">
+                    Get My Free Audit
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div
+              className="ml-form-successBody row-success"
+              style={{ display: "none" }}
+            >
+              <div className="ml-form-successContent">
+                <h4>Thank you!</h4>
+                <p>
+                  Check your email for your free audit breakdown. I'll be in touch within 24 hours.
+                </p>
               </div>
-              <input type="hidden" name="ml-submit" value="1" />
-              <div className="ml-form-embedSubmit">
-                <button type="submit" className="primary">
-                  Get My Free Audit
-                </button>
-                <button disabled style={{ display: 'none' }} type="button" className="loading">
-                  <div className="ml-form-embedSubmitLoad"></div>
-                  <span className="sr-only">Loading...</span>
-                </button>
-              </div>
-              <input type="hidden" name="anticsrf" value="true" />
-            </form>
-          </div>
-          <div className="ml-form-successBody row-success" style={{ display: 'none' }}>
-            <div className="ml-form-successContent">
-              <h4>Perfect!</h4>
-              <p>You have successfully signed up for your free funnel audit!</p>
-              <p>Sam will reach you within 24 hours.</p>
             </div>
           </div>
         </div>
