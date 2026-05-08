@@ -82,27 +82,6 @@
     </div>
   </section>
 
-  <!-- RESULTS COUNTER SECTION -->
-  <section class="results-counter" id="resultsCounter">
-    <div class="results-counter-content">
-      <div class="counter-item">
-        <div class="counter-number" data-target="10000">0</div>
-        <div class="counter-label">Audits Completed</div>
-      </div>
-      <div class="counter-divider"></div>
-      <div class="counter-item">
-        <div class="counter-number" data-target="500">0</div>
-        <div class="counter-label">Coaches Helped</div>
-      </div>
-      <div class="counter-divider"></div>
-      <div class="counter-item">
-        <div class="counter-number" data-target="2500000">0</div>
-        <div class="counter-label">Revenue Recovered</div>
-        <div class="counter-suffix">+</div>
-      </div>
-    </div>
-  </section>
-
   <!-- PROBLEM SECTION -->
   <section class="problem">
     <div class="problem-content">
@@ -344,55 +323,6 @@
     <div class="footer-divider"></div>
   </footer>
 
-
-  <script>
-    // Counter Animation - Count up when section is visible
-    function animateCounters() {
-      const counterElements = document.querySelectorAll('.counter-number');
-      const countersSection = document.getElementById('resultsCounter');
-      let hasAnimated = false;
-
-      function startCounting() {
-        if (hasAnimated) return;
-        hasAnimated = true;
-
-        counterElements.forEach(element => {
-          const target = parseInt(element.getAttribute('data-target'));
-          const duration = 2000; // 2 seconds
-          const increment = target / (duration / 16); // 60fps
-          let current = 0;
-
-          const counter = setInterval(() => {
-            current += increment;
-            if (current >= target) {
-              current = target;
-              clearInterval(counter);
-            }
-            element.textContent = Math.floor(current).toLocaleString();
-          }, 16);
-        });
-      }
-
-      // Check if section is in viewport
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            startCounting();
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      observer.observe(countersSection);
-    }
-
-    // Initialize counter animation when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', animateCounters);
-    } else {
-      animateCounters();
-    }
-  </script>
 
   <script>
     // Sticky Smart Header - Show on scroll up, hide on scroll down
