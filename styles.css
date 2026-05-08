@@ -1123,3 +1123,478 @@ footer {
     padding: 0.9rem 1.2rem;
   }
 }
+
+
+/* ========================================
+   COUNTDOWN TIMER SECTION
+   ======================================== */
+
+.countdown-section {
+  background: linear-gradient(135deg, rgba(255, 45, 45, 0.1) 0%, rgba(26, 26, 46, 0.1) 100%);
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 45, 45, 0.2);
+  border-bottom: 1px solid rgba(255, 45, 45, 0.2);
+}
+
+.countdown-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.countdown-label {
+  color: #ff2d2d;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.countdown-section h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.countdown-text {
+  color: #d1d5db;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 45, 45, 0.2);
+}
+
+.timer-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 45, 45, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  min-width: 80px;
+}
+
+.timer-unit span {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ff2d2d;
+  font-family: 'Bebas Neue', monospace;
+}
+
+.timer-unit p {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timer-separator {
+  font-size: 2rem;
+  color: #ff2d2d;
+  font-weight: 700;
+}
+
+/* ========================================
+   TESTIMONIAL SLIDER
+   ======================================== */
+
+.testimonial-slider {
+  position: relative;
+  background: rgba(26, 26, 46, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 45, 45, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  min-height: 250px;
+}
+
+.testimonial-card {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card.active {
+  opacity: 1;
+  position: relative;
+  top: auto;
+  left: auto;
+  width: auto;
+  height: auto;
+}
+
+.testimonial-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #e5e7eb;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+.testimonial-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.testimonial-avatar {
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 45, 45, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+}
+
+.testimonial-result {
+  color: #ff2d2d;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 45, 45, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot.active {
+  background: #ff2d2d;
+  width: 30px;
+  border-radius: 5px;
+}
+
+/* ========================================
+   TRUST BADGES SECTION
+   ======================================== */
+
+.trust-badges {
+  background: rgba(26, 26, 46, 0.3);
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(255, 45, 45, 0.2);
+}
+
+.trust-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.trust-badges h3 {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.badge {
+  background: rgba(255, 45, 45, 0.1);
+  border: 1px solid rgba(255, 45, 45, 0.2);
+  padding: 1.5rem;
+  border-radius: 8px;
+  color: #ffffff;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  background: rgba(255, 45, 45, 0.15);
+  border-color: rgba(255, 45, 45, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   FAQ SECTION
+   ======================================== */
+
+.faq-section {
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, rgba(10, 10, 15, 0.5) 0%, rgba(26, 26, 46, 0.3) 100%);
+}
+
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-section h2 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: rgba(26, 26, 46, 0.5);
+  border: 1px solid rgba(255, 45, 45, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item.active {
+  border-color: rgba(255, 45, 45, 0.5);
+  background: rgba(26, 26, 46, 0.8);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.faq-question:hover {
+  color: #ff2d2d;
+}
+
+.faq-toggle {
+  font-size: 1.5rem;
+  color: #ff2d2d;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 500px;
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.faq-answer p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ========================================
+   EXIT INTENT POPUP
+   ======================================== */
+
+.exit-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.exit-popup.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.exit-popup-content {
+  background: linear-gradient(135deg, rgba(26, 26, 46, 0.95) 0%, rgba(10, 10, 15, 0.95) 100%);
+  border: 2px solid rgba(255, 45, 45, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.exit-popup-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.exit-popup-close:hover {
+  color: #ff2d2d;
+}
+
+.exit-popup-content h3 {
+  color: #ffffff;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.exit-popup-content p {
+  color: #d1d5db;
+  margin-bottom: 1rem;
+}
+
+.exit-popup-offer {
+  color: #ff2d2d;
+  font-weight: 600;
+  margin: 1.5rem 0;
+}
+
+.exit-popup-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #ff2d2d 0%, #e62626 100%);
+  color: #ffffff;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.exit-popup-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(255, 45, 45, 0.4);
+}
+
+/* ========================================
+   STICKY HEADER ENHANCEMENT
+   ======================================== */
+
+.sticky-countdown {
+  font-size: 0.85rem;
+  color: #ff2d2d;
+  font-weight: 600;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .sticky-countdown {
+    display: block;
+  }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer {
+  background: rgba(10, 10, 15, 0.8);
+  border-top: 1px solid rgba(255, 45, 45, 0.2);
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-content p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+  .countdown-timer {
+    gap: 0.5rem;
+    padding: 1.5rem;
+  }
+
+  .timer-unit {
+    min-width: 60px;
+    padding: 0.75rem 1rem;
+  }
+
+  .timer-unit span {
+    font-size: 1.5rem;
+  }
+
+  .testimonial-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+
+  .badges-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exit-popup-content {
+    padding: 2rem;
+  }
+}
