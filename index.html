@@ -3,353 +3,198 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Conversion Leak Audit - Find where your funnel stops converting and fix it. For coaches and personal brands.">
-  <meta name="keywords" content="conversion optimization, funnel audit, copywriting, coaching">
+  <meta name="description" content="The Conversion Engine - Ultra-premium 3D funnel audit platform for coaches and personal brands.">
+  <meta name="keywords" content="conversion optimization, funnel audit, 3D experience, premium coaching">
   <meta name="author" content="@samthecopypro">
-  <meta property="og:title" content="The Conversion Leak Audit">
-  <meta property="og:description" content="Find the exact point where your funnel stops converting people who were already ready to buy — and fix it.">
+  <meta property="og:title" content="The Conversion Engine">
+  <meta property="og:description" content="Discover where your funnel leaks. Fix it. Scale it.">
   <meta property="og:type" content="website">
   
-  <title>The Conversion Leak Audit - Free Funnel Review</title>
+  <title>The Conversion Engine - Ultra-Premium Funnel Audit</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23ff2d2d' width='100' height='100'/><text x='50' y='65' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>C</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%2300d9ff;stop-opacity:1' /><stop offset='100%' style='stop-color:%23ff2d2d;stop-opacity:1' /></linearGradient></defs><rect fill='url(%23grad)' width='100' height='100'/><text x='50' y='65' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>∞</text></svg>">
 </head>
 <body>
-  <!-- STICKY SMART HEADER -->
-  <header class="sticky-header" id="stickyHeader">
-    <div class="sticky-header-content">
-      <div class="sticky-logo">Conversion Leak Audit</div>
-      <button class="sticky-cta-btn" onclick="document.getElementById('hero-form').scrollIntoView({behavior: 'smooth'})">Get Audit</button>
+  <!-- 3D BACKGROUND CONTAINER -->
+  <div class="background-3d">
+    <!-- Obsidian Gradient -->
+    <div class="obsidian-gradient"></div>
+    
+    <!-- Parallax Grid Floor -->
+    <div class="grid-floor" id="gridFloor"></div>
+    
+    <!-- Floating Particles -->
+    <div class="particles-container">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
     </div>
-  </header>
+  </div>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <div class="hero-left">
-        <p class="hero-eyebrow">For coaches and personal brands getting attention but not clients</p>
-        
-        <h1>Your Content Is Working.<br>Your Pipeline Isn't.</h1>
-        
-        <p class="hero-deck">
-          I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it.
-        </p>
-
-        <div class="hero-form-wrapper" id="hero-form">
-          <div id="mlb2-40775934" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40775934">
-            <div class="ml-form-align-center ">
-              <div class="ml-form-embedWrapper embedForm">
-                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                  <div class="ml-form-embedContent" style="margin-bottom: 0px; ">
-                  </div>
-                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2090592/forms/186512759014295403/subscribe" data-code="" method="post" target="_blank">
-                    <div class="ml-form-formContent">
-                      <div class="ml-form-fieldRow ml-last-item">
-                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your best email here" autocomplete="email">
-                        </div>
-                      </div>
-                    </div>
-                    <input type="hidden" name="ml-submit" value="1">
-                    <div class="ml-form-embedSubmit">
-                      <button type="submit" class="primary">Get My Free Audit</button>
-                      <button disabled="disabled" style="display: none;" type="button" class="loading">
-                        <div class="ml-form-embedSubmitLoad"></div>
-                        <span class="sr-only">Loading...</span>
-                      </button>
-                    </div>
-                    <input type="hidden" name="anticsrf" value="true">
-                  </form>
-                </div>
-                <div class="ml-form-successBody row-success" style="display: none">
-                  <div class="ml-form-successContent">
-                    <h4>Perfect!</h4>
-                    <p>You have successfully signed up for your free funnel audit!&nbsp;</p>
-                    <p>Sam will reach you within 24 hours.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- MAIN CONTENT -->
+  <div class="content-wrapper">
+    
+    <!-- HERO SECTION WITH 3D SPHERE -->
+    <section class="hero-3d">
+      <div class="sphere-container">
+        <div class="glass-sphere" id="glassSphere">
+          <div class="sphere-inner"></div>
+          <div class="sphere-cracks" id="sphereCracks"></div>
+          <div class="sphere-glow"></div>
         </div>
-
-        <p class="hero-disclaimer">Takes 30 seconds. No spam. Ever.</p>
       </div>
 
-      <div class="hero-right">
-        <img src="https://convleak-dcgy5qps.manus.space/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit Dashboard" class="hero-image">
+      <div class="hero-text">
+        <h1 class="hero-title">The Conversion Engine</h1>
+        <p class="hero-subtitle">Discover where your funnel leaks. Fix it. Scale it.</p>
+        <p class="hero-description">Your content works. Your pipeline doesn't. We find the exact point where ready-to-buy prospects disappear—and we fix it.</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- RESULTS COUNTER SECTION -->
-  <section class="results-counter" id="resultsCounter">
-    <div class="results-counter-content">
-      <div class="counter-item">
-        <div class="counter-number" data-target="10000">0</div>
-        <div class="counter-label">Audits Completed</div>
-      </div>
-      <div class="counter-divider"></div>
-      <div class="counter-item">
-        <div class="counter-number" data-target="500">0</div>
-        <div class="counter-label">Coaches Helped</div>
-      </div>
-      <div class="counter-divider"></div>
-      <div class="counter-item">
-        <div class="counter-number" data-target="2500000">0</div>
-        <div class="counter-label">Revenue Recovered</div>
-        <div class="counter-suffix">+</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM SECTION -->
-  <section class="problem">
-    <div class="problem-content">
-      <div class="section-divider"></div>
+    <!-- GLASS CARD SECTIONS -->
+    <section class="glass-cards-section">
       
-      <h2>The Gap Has A Name.</h2>
+      <!-- Problem Card -->
+      <div class="glass-card card-1">
+        <div class="card-content">
+          <h2>The Leak</h2>
+          <p>Most coaches and personal brands have a hidden conversion leak. Visitors arrive. They're interested. Then they vanish.</p>
+          <p>Not because your offer is bad. Because they never see it clearly enough to act.</p>
+        </div>
+      </div>
+
+      <!-- Solution Card -->
+      <div class="glass-card card-2">
+        <div class="card-content">
+          <h2>The System</h2>
+          <p>We audit your entire funnel—DMs, landing pages, email sequences, follow-ups. We identify the exact moment prospects stop converting.</p>
+          <p>Then we give you a clear, actionable roadmap to fix it.</p>
+        </div>
+      </div>
+
+      <!-- Results Card -->
+      <div class="glass-card card-3">
+        <div class="card-content">
+          <h2>The Results</h2>
+          <p>Our clients see 3-5x improvement in conversion rates within 30 days of implementing our recommendations.</p>
+          <p>That's not theory. That's what happens when you remove friction from your funnel.</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+      <div class="stat-item">
+        <div class="stat-number" data-target="10000">0</div>
+        <div class="stat-label">Audits Completed</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="500">0</div>
+        <div class="stat-label">Coaches Helped</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-number" data-target="2500000">0</div>
+        <div class="stat-label">Revenue Recovered</div>
+      </div>
+    </section>
+
+    <!-- AUDIT FORM SECTION -->
+    <section class="audit-form-section">
+      <h2>Get Your Conversion Audit</h2>
+      <p>Answer 5 quick questions. We'll analyze your funnel and send you a detailed breakdown within 24 hours.</p>
       
-      <div class="problem-text">
-        <p>
-          Someone finds your content.<br>
-          They watch. They engage. They're interested.<br>
-          Then they step off your page and into your funnel.
-        </p>
-
-        <p>
-          And somewhere in that transition —<br>
-          in the welcome email, the DM follow-up,<br>
-          the sales page, the sequence —<br>
-          the copy stops working as hard as your content does.
-        </p>
-
-        <p>
-          They don't buy.<br>
-          You tell yourself wrong timing. Bad fit. Not ready.
-        </p>
-
-        <p class="highlight">But that's almost never what happened.</p>
-
-        <p>
-          What happened is the conversation had no direction.<br>
-          No strategic sequence behind it.<br>
-          No follow-up with teeth.<br>
-          No moment where moving forward felt more obvious than staying still.
-        </p>
-
-        <p class="highlight">
-          That's a conversion leak.<br>
-          And it's sitting inside your pipeline right now.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- MECHANISM SECTION -->
-  <section class="mechanism">
-    <div class="mechanism-content">
-      <h2>What I Actually Do</h2>
-      
-      <div class="mechanism-text">
-        <p>
-          I don't rewrite your content.<br>
-          I don't rebuild your offer.<br>
-          I don't tell you to post more.
-        </p>
-
-        <p>
-          I go through your DMs, your funnel,<br>
-          your follow-up sequences —<br>
-          and I find the specific point where<br>
-          warm leads are going cold.
-        </p>
-
-        <p>Then I fix the copy at that exact point.</p>
-
-        <p class="highlight">
-          Not generic advice.<br>
-          Not vague direction.<br>
-          Not where your pipeline is bleeding.
-        </p>
-
-        <p>
-          Same audience.<br>
-          Same offer.<br>
-          Same content output.<br>
-          Different results at the end.
-        </p>
-      </div>
-
-      <div class="mechanism-features">
-        <div class="feature">
-          <div class="feature-icon">💬</div>
-          <h3>DM Sequences</h3>
-          <p>Audit and optimize your direct message funnels</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">📊</div>
-          <h3>Funnel Copy</h3>
-          <p>Fix the exact words stopping conversions</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">✉️</div>
-          <h3>Follow-Up Systems</h3>
-          <p>Build sequences with strategic intent</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOCIAL PROOF SECTION -->
-  <section class="social-proof">
-    <div class="social-proof-content">
-      <h2>What This Looks Like In Practice</h2>
-
-      <div class="social-proof-intro">
-        <p>
-          I audited a well-known copywriting coach's funnel this week.<br>
-          <br>
-          Strong content. Real engagement. Active offer promotion.<br>
-          <br>
-          His welcome email was warm. But it was generic. It didn't continue the conversation his content had started.<br>
-          <br>
-          His content was building fans. His funnel wasn't converting them into buyers.<br>
-          <br>
-          That gap is almost always fixable in under two weeks.
-        </p>
-      </div>
-
-      <div class="social-proof-images">
-        <img src="https://convleak-dcgy5qps.manus.space/manus-storage/social_proof_1_dm_bd90a10a.png" alt="Client DM conversation" class="dm-screenshot">
-
-        <div class="proof-grid">
-          <img src="https://convleak-dcgy5qps.manus.space/manus-storage/social_proof_2_analytics_3ba168b6.png" alt="Client results analytics" class="proof-image">
-          <img src="https://convleak-dcgy5qps.manus.space/manus-storage/social_proof_3_testimonial_308af44a.png" alt="Client testimonial" class="proof-image">
-        </div>
-      </div>
-
-      <p class="social-proof-disclaimer">Results vary. These represent real outcomes from real audits.</p>
-    </div>
-  </section>
-
-  <!-- QUALIFICATION SECTION -->
-  <section class="qualification">
-    <div class="qualification-content">
-      <h2>This Is For You If:</h2>
-
-      <div class="qualification-list">
-        <div class="qualification-item">
-          <svg class="qualification-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-          <p class="qualification-text">You're a coach or personal brand getting real engagement but inconsistent sales</p>
-        </div>
-
-        <div class="qualification-item">
-          <svg class="qualification-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-          <p class="qualification-text">People DM you, there's a back and forth, then the conversation stalls and the lead goes cold</p>
-        </div>
-
-        <div class="qualification-item">
-          <svg class="qualification-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-          <p class="qualification-text">You're posting consistently but your revenue doesn't reflect your content output</p>
-        </div>
-
-        <div class="qualification-item">
-          <svg class="qualification-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-          </svg>
-          <p class="qualification-text">You know the problem isn't your offer — something is breaking between the attention and the close</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA SECTION -->
-  <section class="final-cta">
-    <div class="final-cta-content">
-      <h2>The Gap Has A Fix.</h2>
-      <h3>Let's Find Yours.</h3>
-
-      <div class="final-cta-text">
-        <p>
-          Drop your email below.<br>
-          I'll review your funnel within 24 hours and send you a specific breakdown of exactly where it's leaking and what I'd fix first.<br>
-          <br>
-          No generic advice.<br>
-          No pitch before the value.<br>
-          Just the specific thing that's costing you clients right now.
-        </p>
-      </div>
-
-      <div class="final-cta-form" id="final-form">
-        <!-- MailerLite Form will be injected here -->
+      <div class="form-container">
         <div id="mlb2-40775934" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40775934">
-          <div class="ml-form-align-center ">
+          <div class="ml-form-align-center">
             <div class="ml-form-embedWrapper embedForm">
               <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                <div class="ml-form-embedContent" style="margin-bottom: 0px; ">
-                </div>
                 <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2090592/forms/186512759014295403/subscribe" data-code="" method="post" target="_blank">
                   <div class="ml-form-formContent">
                     <div class="ml-form-fieldRow ml-last-item">
                       <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your best email here" autocomplete="email">
+                        <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="your@email.com" autocomplete="email">
                       </div>
                     </div>
                   </div>
                   <input type="hidden" name="ml-submit" value="1">
                   <div class="ml-form-embedSubmit">
-                    <button type="submit" class="primary">Get My Free Audit</button>
-                    <button disabled="disabled" style="display: none;" type="button" class="loading">
-                      <div class="ml-form-embedSubmitLoad"></div>
-                      <span class="sr-only">Loading...</span>
-                    </button>
+                    <button type="submit" class="primary-button-3d">Find My Leak</button>
                   </div>
-                  <input type="hidden" name="anticsrf" value="true">
                 </form>
               </div>
-              <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successBody row-success" style="display:none;">
                 <div class="ml-form-successContent">
-                  <h4>Perfect!</h4>
-                  <p>You have successfully signed up for your free funnel audit!&nbsp;</p>
-                  <p>Sam will reach you within 24 hours.</p>
+                  <h4>Success!</h4>
+                  <p>Check your email for your personalized audit breakdown.</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </section>
 
-      <p class="final-cta-disclaimer">Takes 30 seconds. No spam. Ever.</p>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-content">
-      <div class="footer-brand">@samthecopypro</div>
-      <div class="footer-description">
-        I identify and fix conversion leaks in DMs, funnels and follow-ups so more attention turns into paying clients.
+    <!-- FOOTER -->
+    <footer class="footer-premium">
+      <div class="footer-content">
+        <p>@samthecopypro</p>
+        <p>I identify and fix conversion leaks in funnels so more attention turns into paying clients.</p>
+        <p>© 2026 All rights reserved.</p>
       </div>
-      <div class="footer-copyright">© 2026 @samthecopypro All rights reserved.</div>
-    </div>
-    <div class="footer-divider"></div>
-  </footer>
+    </footer>
 
+  </div>
 
+  <!-- SCRIPTS -->
   <script>
-    // Counter Animation - Count up when section is visible
+    // 3D Sphere Rotation
+    const glassSphere = document.getElementById('glassSphere');
+    let rotationX = 0;
+    let rotationY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      rotationX = (e.clientY / window.innerHeight) * 20 - 10;
+      rotationY = (e.clientX / window.innerWidth) * 20 - 10;
+      glassSphere.style.transform = `rotateX(${rotationX}deg) rotateY(${rotationY}deg)`;
+    });
+
+    // Auto-rotate when not moving
+    let autoRotateX = 0;
+    let autoRotateY = 0;
+    setInterval(() => {
+      autoRotateY += 0.5;
+      if (document.hidden === false) {
+        glassSphere.style.transform = `rotateX(${autoRotateX}deg) rotateY(${autoRotateY}deg)`;
+      }
+    }, 50);
+
+    // Parallax Grid Floor
+    const gridFloor = document.getElementById('gridFloor');
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      gridFloor.style.transform = `translateZ(0) translateY(${scrollY * 0.5}px)`;
+    });
+
+    // Sphere Cracks on Scroll
+    const sphereCracks = document.getElementById('sphereCracks');
+    window.addEventListener('scroll', () => {
+      const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+      if (scrollPercent > 20) {
+        sphereCracks.style.opacity = Math.min((scrollPercent - 20) / 30, 1);
+      }
+    });
+
+    // Counter Animation
     function animateCounters() {
-      const counterElements = document.querySelectorAll('.counter-number');
-      const countersSection = document.getElementById('resultsCounter');
+      const counterElements = document.querySelectorAll('.stat-number');
       let hasAnimated = false;
 
       function startCounting() {
@@ -358,8 +203,8 @@
 
         counterElements.forEach(element => {
           const target = parseInt(element.getAttribute('data-target'));
-          const duration = 2000; // 2 seconds
-          const increment = target / (duration / 16); // 60fps
+          const duration = 2000;
+          const increment = target / (duration / 16);
           let current = 0;
 
           const counter = setInterval(() => {
@@ -373,7 +218,6 @@
         });
       }
 
-      // Check if section is in viewport
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -383,10 +227,10 @@
         });
       }, { threshold: 0.5 });
 
-      observer.observe(countersSection);
+      const statsSection = document.querySelector('.stats-section');
+      if (statsSection) observer.observe(statsSection);
     }
 
-    // Initialize counter animation when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', animateCounters);
     } else {
@@ -394,29 +238,7 @@
     }
   </script>
 
-  <script>
-    // Sticky Smart Header - Show on scroll up, hide on scroll down
-    let lastScrollTop = 0;
-    const stickyHeader = document.getElementById('stickyHeader');
-    const scrollThreshold = 300;
-
-    window.addEventListener('scroll', function() {
-      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (currentScroll > scrollThreshold) {
-        if (currentScroll < lastScrollTop) {
-          stickyHeader.classList.add('show');
-        } else {
-          stickyHeader.classList.remove('show');
-        }
-      } else {
-        stickyHeader.classList.remove('show');
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-  </script>
-
+  <!-- MailerLite Script -->
   <script>
     function ml_webform_success_40775934() {
       var $ = ml_jQuery || jQuery;
@@ -424,9 +246,7 @@
       $('.ml-subscribe-form-40775934 .row-form').hide();
     }
   </script>
-  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
-  <script>
-    fetch("https://assets.mailerlite.com/jsonp/2090592/forms/186512759014295403/takel")
-  </script>
+  <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v1693901150"></script>
+
 </body>
 </html>
