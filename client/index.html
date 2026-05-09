@@ -1423,137 +1423,44 @@
     // Carousel data
     const carouselData = [
       {
-        type: 'dm',
-        title: 'Instagram DM Conversation #1',
-        messages: [
-          { sender: 'Client', text: 'Hey! Just wanted to say the audit was game-changing. We fixed the copy and saw a 45% lift in conversions.' },
-          { sender: 'You', text: 'That\'s amazing! Which section did you change first?' },
-          { sender: 'Client', text: 'The email sequence. Your breakdown made it so clear where we were losing people.' }
-        ]
+        type: 'image',
+        title: 'MailerLite Dashboard',
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/mailerlite_dashboard-RhKsjUrFUJwmapJEQioo4E.webp'
       },
       {
-        type: 'dm',
-        title: 'Instagram DM Conversation #2',
-        messages: [
-          { sender: 'Client', text: 'I implemented your recommendations yesterday...' },
-          { sender: 'Client', text: 'We already got 3 new qualified leads today!' },
-          { sender: 'You', text: 'That\'s incredible! The funnel is working.' }
-        ]
+        type: 'image',
+        title: 'Mailchimp Dashboard',
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/mailchimp_dashboard-compressed.webp'
       },
       {
-        type: 'analytics',
-        title: 'MailerLite Analytics',
-        platform: 'MailerLite',
-        metrics: [
-          { label: 'Leads Captured', value: '1,247', bar: 85 },
-          { label: 'Open Rate', value: '42%', bar: 42 },
-          { label: 'Click Rate', value: '18%', bar: 18 },
-          { label: 'Conversion Rate', value: '8.5%', bar: 85 }
-        ]
+        type: 'image',
+        title: 'ActiveCampaign Dashboard',
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/activecampaign_dashboard-compressed.webp'
       },
       {
-        type: 'analytics',
-        title: 'Mailchimp Analytics',
-        platform: 'Mailchimp',
-        metrics: [
-          { label: 'Subscribers', value: '3,892', bar: 78 },
-          { label: 'Engagement Rate', value: '35%', bar: 35 },
-          { label: 'Unsubscribe Rate', value: '0.2%', bar: 2 },
-          { label: 'Revenue Generated', value: '$45K', bar: 90 }
-        ]
-      },
-      {
-        type: 'analytics',
-        title: 'ActiveCampaign Analytics',
-        platform: 'ActiveCampaign',
-        metrics: [
-          { label: 'Contacts', value: '5,621', bar: 89 },
-          { label: 'Automation Runs', value: '12,450', bar: 95 },
-          { label: 'Deal Value', value: '$127K', bar: 92 },
-          { label: 'Win Rate', value: '62%', bar: 62 }
-        ]
-      },
-      {
-        type: 'success',
+        type: 'image',
         title: 'Conversion Audit Wins',
-        wins: [
-          'Identified funnel leak in email sequence (Step 3)',
-          'Rewrote subject line - improved open rate 34%',
-          'Fixed CTA button copy - increased clicks 28%',
-          'Optimized landing page headline - 52% more conversions',
-          'Streamlined checkout flow - reduced cart abandonment 19%'
-        ]
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/success_log_1-RhKsjUrFUJwmapJEQioo4E.webp'
       },
       {
-        type: 'dm',
-        title: 'Instagram DM Conversation #3',
-        messages: [
-          { sender: 'Client', text: 'Before the audit, we were stuck at $8K/month...' },
-          { sender: 'Client', text: 'After your recommendations, we hit $23K/month!' },
-          { sender: 'You', text: 'That\'s a 188% increase! Incredible work implementing the changes.' }
-        ]
+        type: 'image',
+        title: 'Live Conversion Tracking',
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/success_log_2-aqBRQ9UM2a9uPxqvRkKxHH.webp'
       },
       {
-        type: 'analytics',
-        title: 'Growth Metrics Dashboard',
-        platform: 'Custom Analytics',
-        metrics: [
-          { label: 'Monthly Revenue', value: '$156K', bar: 98 },
-          { label: 'Customer LTV', value: '$4,200', bar: 84 },
-          { label: 'ROI on Audit', value: '1,850%', bar: 100 },
-          { label: 'Time to Profitability', value: '14 days', bar: 28 }
-        ]
-      },
-      {
-        type: 'success',
-        title: 'Client Results Summary',
-        wins: [
-          'Recovered $2.5M in lost revenue across portfolio',
-          'Average conversion rate increase: 3x',
-          'Email sequence optimization: 45% lift',
-          'Landing page improvements: 52% more qualified leads',
-          'Customer acquisition cost reduced by 38%'
-        ]
-      },
-      {
-        type: 'dm',
-        title: 'Instagram DM Conversation #4',
-        messages: [
-          { sender: 'Client', text: 'Just wanted to say thank you for the audit.' },
-          { sender: 'Client', text: 'It literally changed the trajectory of our business.' },
-          { sender: 'You', text: 'That\'s what I\'m here for. Let\'s keep scaling.' }
-        ]
-      },
-      {
-        type: 'analytics',
-        title: 'Conversion Funnel Analysis',
-        platform: 'Analytics',
-        metrics: [
-          { label: 'Landing Page Visitors', value: '8,432', bar: 84 },
-          { label: 'Email Signups', value: '2,104', bar: 25 },
-          { label: 'Qualified Leads', value: '847', bar: 40 },
-          { label: 'Paying Customers', value: '203', bar: 24 }
-        ]
-      },
-      {
-        type: 'success',
+        type: 'image',
         title: 'Before & After Comparison',
-        wins: [
-          'Email open rate: 18% → 42% (+133%)',
-          'Click-through rate: 4% → 18% (+350%)',
-          'Landing page conversions: 1.2% → 6.8% (+467%)',
-          'Customer acquisition cost: $145 → $89 (-39%)',
-          'Monthly recurring revenue: $8K → $23K (+188%)'
-        ]
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/before_after_comparison-3i7n8BAxgEDGF8ANio86n8.webp'
       },
       {
-        type: 'dm',
-        title: 'Instagram DM Conversation #5',
-        messages: [
-          { sender: 'Client', text: 'Quick question - can we do another audit for our new product launch?' },
-          { sender: 'You', text: 'Absolutely! Let\'s schedule it.' },
-          { sender: 'Client', text: 'Perfect. You\'ve become essential to our growth strategy.' }
-        ]
+        type: 'image',
+        title: 'Conversion Funnel Analysis',
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/conversion_funnel-RxpEdMmHHY2N8rPNkBdpcR.webp'
+      },
+      {
+        type: 'image',
+        title: 'ROI Calculator',
+        image: 'https://d2xsxph8kpxj0f.cloudfront.net/310519663595786534/DCGY5QPS3BiVAuvGHrq5mc/roi_calculator-7QYKwPPDma7uCyy8jCudsi.webp'
       }
     ];
 
@@ -1585,7 +1492,9 @@
       const content = document.createElement('div');
       content.className = 'slide-content';
 
-      if (slide.type === 'dm') {
+      if (slide.type === 'image') {
+        return `<img src="${slide.image}" alt="${slide.title}" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;" />`;
+      } else if (slide.type === 'dm') {
         let html = `<div class="dm-mockup"><div class="dm-header"><div class="dm-avatar">C</div><div class="dm-name">${slide.title}</div></div>`;
         slide.messages.forEach(msg => {
           const isSent = msg.sender === 'You';
