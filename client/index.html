@@ -123,6 +123,22 @@
       letter-spacing: 0.1em;
     }
 
+    /* CENTERED PRICE BADGE */
+    .price-badge-centered {
+      display: block;
+      background: rgba(37, 99, 235, 0.08);
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary-accent);
+      margin: 0 auto 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      width: fit-content;
+    }
+
     /* HERO SECTION */
     .hero {
       padding: 100px 40px 60px;
@@ -139,6 +155,23 @@
       letter-spacing: -0.02em;
     }
 
+    /* ALL-CAPS CENTERED HEADLINE */
+    .hero-headline-caps {
+      font-size: 72px !important;
+      font-weight: 900 !important;
+      line-height: 1.1 !important;
+      margin-bottom: 30px !important;
+      color: var(--primary-text) !important;
+      letter-spacing: -0.03em !important;
+      text-align: center !important;
+      text-transform: uppercase !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    }
+
+    .hero-headline-caps .highlight {
+      color: var(--primary-accent) !important;
+    }
+
     .hero h1 .highlight {
       color: var(--primary-accent);
     }
@@ -148,6 +181,16 @@
       color: var(--text-secondary);
       margin-bottom: 40px;
       font-weight: 400;
+    }
+
+    /* CENTERED SUB-HEADLINE */
+    .sub-headline-centered {
+      font-size: 18px !important;
+      color: var(--text-secondary) !important;
+      margin-bottom: 50px !important;
+      font-weight: 400 !important;
+      text-align: center !important;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     }
 
     .hero-image {
@@ -163,6 +206,66 @@
       width: 100%;
       height: auto;
       display: block;
+    }
+
+    /* VIDEO CONTAINER */
+    .video-container {
+      margin: 50px auto;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(37, 99, 235, 0.3), 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* HERO CTA WRAPPER */
+    .hero-cta-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 50px auto;
+    }
+
+    .hero-cta-button {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%);
+      color: var(--primary-text);
+      padding: 18px 48px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: 0 0 30px rgba(37, 99, 235, 0.4), 0 10px 40px rgba(0, 0, 0, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      min-width: 300px;
+    }
+
+    .hero-cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(37, 99, 235, 0.6), 0 15px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-cta-button:active {
+      transform: translateY(-1px);
     }
 
     /* MAILERLITE FORM STYLING */
@@ -960,16 +1063,26 @@
   <!-- HERO SECTION -->
   <section class="hero" id="heroSection">
     <div class="container">
-      <div class="price-badge">For Coaches and Personal Brands Getting Attention But Not Clients</div>
+      <div class="price-badge-centered">FOR COACHES AND PERSONAL BRANDS GETTING ATTENTION BUT NOT CLIENTS</div>
       
-      <h1>Your content is working. <span class="highlight">Your pipeline isn't.</span></h1>
+      <h1 class="hero-headline-caps">YOUR CONTENT IS WORKING.<br><span class="highlight">YOUR PIPELINE ISN'T.</span></h1>
       
-      <p class="sub-headline">I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it.</p>
+      <p class="sub-headline-centered">I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it.</p>
       
-      <img src="/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit" class="hero-image" />
+      <!-- YOUTUBE VIDEO EMBED -->
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe width="100%" height="600" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=0" title="The Conversion Leak Audit" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <!-- HIGH-CONTRAST CTA BUTTON -->
+      <div class="hero-cta-wrapper">
+        <button class="hero-cta-button" onclick="document.getElementById('mlb2-40775934').scrollIntoView({behavior: 'smooth'})">Get My Free Audit</button>
+      </div>
       
       <!-- MAILERLITE FORM - HERO -->
-      <div id="mlb2-40775934"></div>
+      <div id="mlb2-40775934" style="margin-top: 3rem;"></div>
     </div>
   </section>
 
