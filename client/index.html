@@ -126,14 +126,14 @@
     /* CENTERED PRICE BADGE */
     .price-badge-centered {
       display: block;
-      background: rgba(37, 99, 235, 0.08);
-      border: 1px solid var(--border-color);
-      padding: 8px 16px;
+      background: transparent !important;
+      border: none !important;
+      padding: 8px 0;
       border-radius: 6px;
-      font-size: 11px;
-      font-weight: 600;
-      color: var(--primary-accent);
-      margin: 0 auto 30px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #ef4444 !important;
+      margin: 0 auto 25px;
       text-transform: uppercase;
       letter-spacing: 0.15em;
       width: fit-content;
@@ -157,15 +157,19 @@
 
     /* ALL-CAPS CENTERED HEADLINE */
     .hero-headline-caps {
-      font-size: 72px !important;
+      font-size: 56px !important;
       font-weight: 900 !important;
-      line-height: 1.1 !important;
+      line-height: 1.35 !important;
       margin-bottom: 30px !important;
       color: var(--primary-text) !important;
-      letter-spacing: -0.03em !important;
+      letter-spacing: -0.02em !important;
       text-align: center !important;
       text-transform: uppercase !important;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      max-width: 900px !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding: 0 20px !important;
     }
 
     .hero-headline-caps .highlight {
@@ -906,13 +910,28 @@
         font-size: 36px;
       }
 
+      .hero-headline-caps {
+        font-size: 32px !important;
+        line-height: 1.4 !important;
+        padding: 0 16px !important;
+      }
+
       .hero .sub-headline {
         font-size: 16px;
+      }
+
+      .sub-headline-centered {
+        font-size: 15px !important;
       }
 
       .price-badge {
         font-size: 11px;
         padding: 6px 12px;
+      }
+
+      .price-badge-centered {
+        font-size: 11px !important;
+        margin-bottom: 20px !important;
       }
 
       .social-proof-bar {
