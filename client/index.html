@@ -142,6 +142,49 @@
       color: var(--primary-accent) !important;
     }
 
+    /* CENTERED PRICE BADGE - PILL STYLE */
+    .price-badge-centered {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.5) !important;
+      border: 1px solid rgba(239, 68, 68, 0.25) !important;
+      padding: 12px 20px !important;
+      border-radius: 50px !important;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'Space Mono', monospace !important;
+      color: #ef4444 !important;
+      margin: 0 auto 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: fit-content;
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+
+    /* GLOWING RED DOT */
+    .price-badge-centered::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+      flex-shrink: 0;
+      animation: pulse-red 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-red {
+      0%, 100% {
+        box-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 8px rgba(239, 68, 68, 0.8), 0 0 15px rgba(239, 68, 68, 0.4), 0 0 20px rgba(239, 68, 68, 0.2);
+      }
+    }
+
     .hero h1 .highlight {
       color: var(--primary-accent);
     }
@@ -489,7 +532,7 @@
   <!-- HERO SECTION -->
   <section class="hero">
     <div class="container">
-      <div class="price-badge-centered" style="color: #ef4444; border-color: rgba(239, 68, 68, 0.3); background: rgba(239, 68, 68, 0.08);">ATTENTION COACHES AND PERSONAL BRANDS GETTING ENGAGEMENT BUT NOT CLIENTS</div>
+      <div class="price-badge-centered">ATTENTION COACHES AND PERSONAL BRANDS GETTING ENGAGEMENT BUT NOT CLIENTS</div>
       
       <h1 class="hero-headline-caps">GET A FREE CONVERSION LEAK AUDIT AND DISCOVER <span class="highlight">WHERE YOU'RE LOSING PEOPLE</span> WHO'LL BUY YOUR OFFER</h1>
       
