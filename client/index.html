@@ -49,6 +49,65 @@
       padding: 0 40px;
     }
 
+    /* STICKY HEADER */
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(14, 14, 18, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      padding: 15px 40px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sticky-header.visible {
+      display: flex;
+    }
+
+    .sticky-header-content {
+      flex: 1;
+    }
+
+    .sticky-header-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-text);
+      margin-bottom: 5px;
+    }
+
+    .sticky-header-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .sticky-header-cta {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%);
+      color: var(--primary-text);
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: var(--shadow-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-left: 20px;
+      flex-shrink: 0;
+    }
+
+    .sticky-header-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+    }
+
     /* PRICE BADGE */
     .price-badge {
       display: inline-block;
@@ -68,6 +127,7 @@
     .hero {
       padding: 100px 40px 60px;
       text-align: center;
+      margin-top: 0;
     }
 
     .hero h1 {
@@ -105,32 +165,71 @@
       display: block;
     }
 
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%);
-      color: var(--primary-text);
-      padding: 16px 40px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      border: 3px dashed #fbbf24;
-      cursor: pointer;
-      transition: var(--transition-base);
-      box-shadow: var(--shadow-blue);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 20px 10px;
+    /* MAILERLITE FORM STYLING */
+    #mlb2-40775934.ml-form-embedContainer {
+      margin: 40px auto !important;
+      max-width: 600px !important;
     }
 
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedWrapper {
+      background-color: transparent !important;
+      border: none !important;
     }
 
-    .cta-button:active {
-      transform: scale(0.98);
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody {
+      padding: 0 !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent {
+      text-align: center;
+      margin: 0 !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4 {
+      color: var(--primary-text) !important;
+      font-size: 24px !important;
+      font-weight: 700 !important;
+      margin-bottom: 15px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p {
+      color: var(--text-secondary) !important;
+      font-size: 16px !important;
+      margin-bottom: 20px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input {
+      background-color: var(--primary-text) !important;
+      color: var(--text-dark) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: 8px !important;
+      padding: 14px 16px !important;
+      font-size: 16px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+      color: var(--text-medium) !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow button {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%) !important;
+      color: var(--primary-text) !important;
+      border: none !important;
+      border-radius: 8px !important;
+      padding: 14px 32px !important;
+      font-size: 16px !important;
+      font-weight: 600 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      cursor: pointer !important;
+      transition: var(--transition-base) !important;
+      box-shadow: var(--shadow-blue) !important;
+      width: 100% !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow button:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4) !important;
     }
 
     /* SOCIAL PROOF BAR */
@@ -574,10 +673,116 @@
       color: var(--primary-text);
     }
 
+    /* EXIT INTENT POPUP */
+    .exit-popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+    }
+
+    .exit-popup-overlay.visible {
+      display: flex;
+    }
+
+    .exit-popup {
+      background: var(--primary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: slideUp 0.3s ease;
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .exit-popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 28px;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .exit-popup-close:hover {
+      color: var(--primary-text);
+    }
+
+    .exit-popup h2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--primary-text);
+      margin-bottom: 15px;
+      margin-top: 10px;
+    }
+
+    .exit-popup p {
+      color: var(--text-secondary);
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .exit-popup-cta {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%);
+      color: var(--primary-text);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: var(--shadow-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .exit-popup-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+    }
+
     /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
       .container {
         padding: 0 20px;
+      }
+
+      .sticky-header {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .sticky-header-cta {
+        margin-left: 0;
+        width: 100%;
       }
 
       .hero {
@@ -677,9 +882,12 @@
         font-size: 16px;
       }
 
-      .cta-button {
-        padding: 14px 32px;
-        font-size: 14px;
+      .exit-popup {
+        padding: 30px;
+      }
+
+      .exit-popup h2 {
+        font-size: 24px;
       }
 
       footer {
@@ -736,27 +944,32 @@
       .final-cta-section p {
         font-size: 14px;
       }
-
-      .cta-button {
-        padding: 12px 24px;
-        font-size: 12px;
-      }
     }
   </style>
 </head>
 <body>
+  <!-- STICKY HEADER -->
+  <div class="sticky-header" id="stickyHeader">
+    <div class="sticky-header-content">
+      <h3>Ready to Fix Your Funnel?</h3>
+      <p>Get your free conversion leak audit in 60 minutes</p>
+    </div>
+    <button class="sticky-header-cta" onclick="document.querySelector('.hero').scrollIntoView({behavior: 'smooth'})">Get Started</button>
+  </div>
+
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="heroSection">
     <div class="container">
-      <div class="price-badge">$17 · Instant Access</div>
+      <div class="price-badge">For Coaches and Personal Brands Getting Attention But Not Clients</div>
       
-      <h1>Your Content Is Working.<br />Your Pipeline <span class="highlight">Isn't.</span></h1>
+      <h1>Your content is working. <span class="highlight">Your pipeline isn't.</span></h1>
       
-      <p class="sub-headline">No GHL. No Clickfunnels. Just strategic copy, smart sequences, and a proven framework.</p>
+      <p class="sub-headline">I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it.</p>
       
       <img src="/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit" class="hero-image" />
       
-      <button class="cta-button" onclick="document.querySelector('.in-60-minutes').scrollIntoView({behavior: 'smooth'})">Get Instant Access - Only $17</button>
+      <!-- MAILERLITE FORM - HERO -->
+      <div id="mlb2-40775934"></div>
     </div>
   </section>
 
@@ -889,7 +1102,9 @@
     <div class="container">
       <h2>Ready to Fix Your Funnel?</h2>
       <p>Get your free conversion leak audit. I'll review your funnel within 24 hours and send you a specific breakdown of exactly where it's leaking and what I'd fix first.</p>
-      <button class="cta-button">Get Instant Access - Only $17</button>
+      
+      <!-- MAILERLITE FORM - FINAL CTA -->
+      <div id="mlb2-40775934-final"></div>
     </div>
   </section>
 
@@ -900,14 +1115,96 @@
     <p>© 2026 All rights reserved.</p>
   </footer>
 
+  <!-- EXIT INTENT POPUP -->
+  <div class="exit-popup-overlay" id="exitPopup">
+    <div class="exit-popup">
+      <button class="exit-popup-close" onclick="closeExitPopup()">×</button>
+      <h2>Wait! Don't Leave Yet</h2>
+      <p>Get your free conversion leak audit and discover exactly where your funnel is losing money. Join 500+ coaches who've already fixed theirs.</p>
+      <button class="exit-popup-cta" onclick="document.querySelector('.hero').scrollIntoView({behavior: 'smooth'}); closeExitPopup();">Get Your Free Audit</button>
+    </div>
+  </div>
+
+  <!-- MAILERLITE SCRIPT -->
+  <script src="https://assets.mailerlite.com/js/universal.js"></script>
   <script>
-    // Smooth scroll for CTA buttons
-    document.querySelectorAll('.cta-button').forEach(button => {
-      button.addEventListener('click', function() {
-        if (this.textContent.includes('Get Instant Access')) {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Wait for MailerLite to load, then initialize forms
+    function initializeMailerLite() {
+      if (typeof ml !== 'undefined') {
+        // MailerLite library is loaded
+        ml('show', '40775934', 'j9k3n2');
+      } else {
+        // Retry after a short delay
+        setTimeout(initializeMailerLite, 500);
+      }
+    }
+
+    // Initialize when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initializeMailerLite);
+    } else {
+      initializeMailerLite();
+    }
+
+    // Clone form for final CTA section
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        const originalForm = document.getElementById('mlb2-40775934');
+        if (originalForm && originalForm.innerHTML.trim() !== '') {
+          const clonedForm = originalForm.cloneNode(true);
+          clonedForm.id = 'mlb2-40775934-final';
+          const finalSection = document.getElementById('mlb2-40775934-final');
+          if (finalSection) {
+            finalSection.parentNode.replaceChild(clonedForm, finalSection);
+          }
         }
-      });
+      }, 1000);
+    });
+
+    // Sticky header visibility
+    const heroSection = document.getElementById('heroSection');
+    const stickyHeader = document.getElementById('stickyHeader');
+
+    window.addEventListener('scroll', function() {
+      const heroBottom = heroSection.getBoundingClientRect().bottom;
+      if (heroBottom < 0) {
+        stickyHeader.classList.add('visible');
+      } else {
+        stickyHeader.classList.remove('visible');
+      }
+    });
+
+    // Exit intent popup
+    let exitPopupShown = false;
+
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0 && !exitPopupShown && window.innerHeight > 100) {
+        showExitPopup();
+        exitPopupShown = true;
+      }
+    });
+
+    function showExitPopup() {
+      document.getElementById('exitPopup').classList.add('visible');
+    }
+
+    function closeExitPopup() {
+      document.getElementById('exitPopup').classList.remove('visible');
+    }
+
+    // Close popup when clicking overlay
+    document.getElementById('exitPopup').addEventListener('click', function(e) {
+      if (e.target === this) {
+        closeExitPopup();
+      }
+    });
+  </script>
+  <script>
+    // Ensure MailerLite forms render after page load
+    window.addEventListener('load', function() {
+      if (typeof ml !== 'undefined' && typeof ml.show === 'function') {
+        ml('show', '40775934', 'j9k3n2');
+      }
     });
   </script>
 </body>
