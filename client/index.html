@@ -698,6 +698,271 @@
       max-width: 1000px;
     }
 
+    /* CAROUSEL STYLES */
+    .carousel-section {
+      padding: 80px 20px;
+      background: var(--primary-bg);
+    }
+
+    .carousel-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: 20px;
+      padding: 40px 20px;
+      overflow: hidden;
+    }
+
+    .carousel-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      width: 100%;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      flex-shrink: 0;
+      padding: 0 20px;
+    }
+
+    .slide-content {
+      background: rgba(30, 30, 40, 0.6);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: 16px;
+      padding: 30px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* CAROUSEL NAVIGATION */
+    .carousel-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 30px;
+    }
+
+    .carousel-arrow {
+      background: rgba(37, 99, 235, 0.2);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      color: var(--primary-text);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      transition: var(--transition-base);
+    }
+
+    .carousel-arrow:hover {
+      background: rgba(37, 99, 235, 0.4);
+      transform: scale(1.1);
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      flex: 1;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.3);
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .carousel-dot.active {
+      background: var(--primary-accent);
+      width: 24px;
+      border-radius: 4px;
+    }
+
+    /* DM MOCK-UP */
+    .dm-mockup {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .dm-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .dm-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary-text);
+      font-weight: 700;
+      position: relative;
+    }
+
+    .dm-avatar::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(90deg, rgba(0,0,0,0.3) 0px, rgba(0,0,0,0.3) 2px, transparent 2px, transparent 4px);
+      border-radius: 50%;
+    }
+
+    .dm-name {
+      font-weight: 600;
+      color: var(--primary-text);
+      font-size: 14px;
+    }
+
+    .dm-bubble {
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: 12px;
+      padding: 12px 16px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--primary-text);
+      margin-left: 50px;
+    }
+
+    .dm-bubble.sent {
+      background: rgba(239, 68, 68, 0.1);
+      border-color: rgba(239, 68, 68, 0.2);
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    /* ANALYTICS MOCK-UP */
+    .analytics-mockup {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .analytics-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+    }
+
+    .analytics-title {
+      font-weight: 600;
+      color: var(--primary-text);
+      font-size: 14px;
+    }
+
+    .analytics-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+    }
+
+    .metric-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .metric-value {
+      font-weight: 700;
+      color: var(--primary-accent);
+      font-size: 14px;
+    }
+
+    .metric-bar {
+      width: 60px;
+      height: 6px;
+      background: rgba(37, 99, 235, 0.2);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .metric-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary-accent) 0%, #1d4ed8 100%);
+      border-radius: 3px;
+    }
+
+    /* SUCCESS LOG */
+    .success-log {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .success-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 8px;
+      font-size: 13px;
+      color: var(--primary-text);
+    }
+
+    .success-icon {
+      color: var(--success-color);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+      .carousel-container {
+        padding: 20px 15px;
+      }
+
+      .slide-content {
+        min-height: 300px;
+        padding: 20px;
+      }
+
+      .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+      }
+
+      .dm-bubble {
+        font-size: 12px;
+        margin-left: 40px;
+      }
+
+      .carousel-nav {
+        margin-top: 20px;
+      }
+    }
+
     .testimonials-section h2 {
       font-size: 36px;
       font-weight: 700;
@@ -1138,16 +1403,269 @@
     </div>
   </section>
 
-  <!-- SOCIAL PROOF BAR -->
-  <section class="social-proof-bar">
-    <div class="social-proof-avatar">C</div>
-    <div class="social-proof-content">
-      <div class="social-proof-metric">250 Buyers & 22 Booked Calls in 6 Weeks</div>
-      <div class="social-proof-stars">★ ★ ★ ★ ★</div>
-      <p class="social-proof-quote">"I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it. Within 6 weeks of implementing this framework, we recovered $2.5M+ in lost revenue and saw 3x average conversion increases across our funnels."</p>
-      <div class="social-proof-author">Colin Gallagher <span class="verified-badge">Verified Buyer</span></div>
+  <!-- CAROUSEL SECTION -->
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- Slides will be generated by JavaScript -->
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <button class="carousel-arrow" id="prevBtn" onclick="moveCarousel(-1)">←</button>
+        <div class="carousel-dots" id="dotsContainer"></div>
+        <button class="carousel-arrow" id="nextBtn" onclick="moveCarousel(1)">→</button>
+      </div>
     </div>
   </section>
+
+  <script>
+    // Carousel data
+    const carouselData = [
+      {
+        type: 'dm',
+        title: 'Instagram DM Conversation #1',
+        messages: [
+          { sender: 'Client', text: 'Hey! Just wanted to say the audit was game-changing. We fixed the copy and saw a 45% lift in conversions.' },
+          { sender: 'You', text: 'That\'s amazing! Which section did you change first?' },
+          { sender: 'Client', text: 'The email sequence. Your breakdown made it so clear where we were losing people.' }
+        ]
+      },
+      {
+        type: 'dm',
+        title: 'Instagram DM Conversation #2',
+        messages: [
+          { sender: 'Client', text: 'I implemented your recommendations yesterday...' },
+          { sender: 'Client', text: 'We already got 3 new qualified leads today!' },
+          { sender: 'You', text: 'That\'s incredible! The funnel is working.' }
+        ]
+      },
+      {
+        type: 'analytics',
+        title: 'MailerLite Analytics',
+        platform: 'MailerLite',
+        metrics: [
+          { label: 'Leads Captured', value: '1,247', bar: 85 },
+          { label: 'Open Rate', value: '42%', bar: 42 },
+          { label: 'Click Rate', value: '18%', bar: 18 },
+          { label: 'Conversion Rate', value: '8.5%', bar: 85 }
+        ]
+      },
+      {
+        type: 'analytics',
+        title: 'Mailchimp Analytics',
+        platform: 'Mailchimp',
+        metrics: [
+          { label: 'Subscribers', value: '3,892', bar: 78 },
+          { label: 'Engagement Rate', value: '35%', bar: 35 },
+          { label: 'Unsubscribe Rate', value: '0.2%', bar: 2 },
+          { label: 'Revenue Generated', value: '$45K', bar: 90 }
+        ]
+      },
+      {
+        type: 'analytics',
+        title: 'ActiveCampaign Analytics',
+        platform: 'ActiveCampaign',
+        metrics: [
+          { label: 'Contacts', value: '5,621', bar: 89 },
+          { label: 'Automation Runs', value: '12,450', bar: 95 },
+          { label: 'Deal Value', value: '$127K', bar: 92 },
+          { label: 'Win Rate', value: '62%', bar: 62 }
+        ]
+      },
+      {
+        type: 'success',
+        title: 'Conversion Audit Wins',
+        wins: [
+          'Identified funnel leak in email sequence (Step 3)',
+          'Rewrote subject line - improved open rate 34%',
+          'Fixed CTA button copy - increased clicks 28%',
+          'Optimized landing page headline - 52% more conversions',
+          'Streamlined checkout flow - reduced cart abandonment 19%'
+        ]
+      },
+      {
+        type: 'dm',
+        title: 'Instagram DM Conversation #3',
+        messages: [
+          { sender: 'Client', text: 'Before the audit, we were stuck at $8K/month...' },
+          { sender: 'Client', text: 'After your recommendations, we hit $23K/month!' },
+          { sender: 'You', text: 'That\'s a 188% increase! Incredible work implementing the changes.' }
+        ]
+      },
+      {
+        type: 'analytics',
+        title: 'Growth Metrics Dashboard',
+        platform: 'Custom Analytics',
+        metrics: [
+          { label: 'Monthly Revenue', value: '$156K', bar: 98 },
+          { label: 'Customer LTV', value: '$4,200', bar: 84 },
+          { label: 'ROI on Audit', value: '1,850%', bar: 100 },
+          { label: 'Time to Profitability', value: '14 days', bar: 28 }
+        ]
+      },
+      {
+        type: 'success',
+        title: 'Client Results Summary',
+        wins: [
+          'Recovered $2.5M in lost revenue across portfolio',
+          'Average conversion rate increase: 3x',
+          'Email sequence optimization: 45% lift',
+          'Landing page improvements: 52% more qualified leads',
+          'Customer acquisition cost reduced by 38%'
+        ]
+      },
+      {
+        type: 'dm',
+        title: 'Instagram DM Conversation #4',
+        messages: [
+          { sender: 'Client', text: 'Just wanted to say thank you for the audit.' },
+          { sender: 'Client', text: 'It literally changed the trajectory of our business.' },
+          { sender: 'You', text: 'That\'s what I\'m here for. Let\'s keep scaling.' }
+        ]
+      },
+      {
+        type: 'analytics',
+        title: 'Conversion Funnel Analysis',
+        platform: 'Analytics',
+        metrics: [
+          { label: 'Landing Page Visitors', value: '8,432', bar: 84 },
+          { label: 'Email Signups', value: '2,104', bar: 25 },
+          { label: 'Qualified Leads', value: '847', bar: 40 },
+          { label: 'Paying Customers', value: '203', bar: 24 }
+        ]
+      },
+      {
+        type: 'success',
+        title: 'Before & After Comparison',
+        wins: [
+          'Email open rate: 18% → 42% (+133%)',
+          'Click-through rate: 4% → 18% (+350%)',
+          'Landing page conversions: 1.2% → 6.8% (+467%)',
+          'Customer acquisition cost: $145 → $89 (-39%)',
+          'Monthly recurring revenue: $8K → $23K (+188%)'
+        ]
+      },
+      {
+        type: 'dm',
+        title: 'Instagram DM Conversation #5',
+        messages: [
+          { sender: 'Client', text: 'Quick question - can we do another audit for our new product launch?' },
+          { sender: 'You', text: 'Absolutely! Let\'s schedule it.' },
+          { sender: 'Client', text: 'Perfect. You\'ve become essential to our growth strategy.' }
+        ]
+      }
+    ];
+
+    let currentIndex = 0;
+    let autoPlayInterval;
+
+    function initCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const dotsContainer = document.getElementById('dotsContainer');
+
+      // Generate slides
+      carouselData.forEach((slide, index) => {
+        const slideDiv = document.createElement('div');
+        slideDiv.className = 'carousel-slide';
+        slideDiv.innerHTML = generateSlideContent(slide);
+        track.appendChild(slideDiv);
+
+        // Generate dots
+        const dot = document.createElement('div');
+        dot.className = 'carousel-dot' + (index === 0 ? ' active' : '');
+        dot.onclick = () => goToSlide(index);
+        dotsContainer.appendChild(dot);
+      });
+
+      startAutoPlay();
+    }
+
+    function generateSlideContent(slide) {
+      const content = document.createElement('div');
+      content.className = 'slide-content';
+
+      if (slide.type === 'dm') {
+        let html = `<div class="dm-mockup"><div class="dm-header"><div class="dm-avatar">C</div><div class="dm-name">${slide.title}</div></div>`;
+        slide.messages.forEach(msg => {
+          const isSent = msg.sender === 'You';
+          html += `<div class="dm-bubble ${isSent ? 'sent' : ''}"><strong>${msg.sender}:</strong> ${msg.text}</div>`;
+        });
+        html += '</div>';
+        return html;
+      } else if (slide.type === 'analytics') {
+        let html = `<div class="analytics-mockup"><div class="analytics-header"><div class="analytics-title">${slide.title}</div><div style="font-size: 12px; color: var(--text-secondary);">${slide.platform}</div></div>`;
+        slide.metrics.forEach(metric => {
+          html += `<div class="analytics-metric"><div class="metric-label">${metric.label}</div><div style="display: flex; align-items: center; gap: 10px;"><div class="metric-bar"><div class="metric-bar-fill" style="width: ${metric.bar}%;"></div></div><div class="metric-value">${metric.value}</div></div></div>`;
+        });
+        html += '</div>';
+        return html;
+      } else if (slide.type === 'success') {
+        let html = `<div class="success-log"><div style="font-weight: 600; color: var(--primary-text); margin-bottom: 10px;">${slide.title}</div>`;
+        slide.wins.forEach(win => {
+          html += `<div class="success-item"><span class="success-icon">✓</span><span>${win}</span></div>`;
+        });
+        html += '</div>';
+        return html;
+      }
+    }
+
+    function moveCarousel(direction) {
+      currentIndex = (currentIndex + direction + carouselData.length) % carouselData.length;
+      updateCarousel();
+      resetAutoPlay();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateCarousel();
+      resetAutoPlay();
+    }
+
+    function updateCarousel() {
+      const track = document.getElementById('carouselTrack');
+      const offset = -currentIndex * 100;
+      track.style.transform = `translateX(${offset}%)`;
+
+      // Update dots
+      document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentIndex);
+      });
+    }
+
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % carouselData.length;
+        updateCarousel();
+      }, 5000);
+    }
+
+    function resetAutoPlay() {
+      clearInterval(autoPlayInterval);
+      startAutoPlay();
+    }
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.getElementById('carouselTrack').addEventListener('touchstart', e => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.getElementById('carouselTrack').addEventListener('touchend', e => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      if (touchStartX - touchEndX > 50) moveCarousel(1);
+      if (touchEndX - touchStartX > 50) moveCarousel(-1);
+    }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', initCarousel);
+  </script>
 
   <!-- IN 60 MINUTES SECTION -->
   <section class="in-60-minutes">
