@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<<<<<<< Updated upstream
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
@@ -243,10 +244,717 @@
             <p>You'll receive a detailed PDF breakdown with: the specific leak identified, why it's costing you conversions, and 3-5 concrete fixes you can implement immediately. Plus a 30-min call to discuss.</p>
           </div>
         </div>
+=======
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f9fb 0%, #e8f0ff 100%);
+      color: #1a202c;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* PRICE BADGE */
+    .price-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #3b82f6;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 80px 20px 60px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 .highlight {
+      color: #3b82f6;
+    }
+
+    .hero .sub-headline {
+      font-size: 20px;
+      color: #475569;
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    .hero-image {
+      max-width: 600px;
+      width: 100%;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 20px 10px;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    }
+
+    /* SOCIAL PROOF BAR */
+    .social-proof-bar {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 30px;
+      margin: 60px auto;
+      max-width: 800px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .social-proof-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .social-proof-content {
+      flex: 1;
+    }
+
+    .social-proof-metric {
+      font-size: 18px;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .social-proof-stars {
+      color: #fbbf24;
+      margin-bottom: 12px;
+      font-size: 16px;
+      letter-spacing: 2px;
+    }
+
+    .social-proof-quote {
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+
+    .social-proof-author {
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .verified-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.2);
+      color: #3b82f6;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      margin-left: 8px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* IN 60 MINUTES SECTION */
+    .in-60-minutes {
+      padding: 80px 20px;
+      background: rgba(59, 130, 246, 0.05);
+      border-radius: 16px;
+      margin: 60px auto;
+      max-width: 1000px;
+    }
+
+    .in-60-minutes h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .in-60-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .in-60-list {
+      list-style: none;
+    }
+
+    .in-60-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 24px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .in-60-list li:before {
+      content: "✓";
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      color: white;
+      border-radius: 50%;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 18px;
+    }
+
+    .in-60-list strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .in-60-image {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.15);
+    }
+
+    .in-60-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* TIMELINE SECTION */
+    .timeline-section {
+      padding: 80px 20px;
+      margin: 60px auto;
+      max-width: 900px;
+    }
+
+    .timeline-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .timeline-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .timeline-header .highlight {
+      color: #3b82f6;
+    }
+
+    .timeline-header p {
+      color: #475569;
+      font-size: 18px;
+      margin-top: 20px;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, #3b82f6 0%, #cbd5e1 100%);
+    }
+
+    .timeline-item {
+      margin-bottom: 50px;
+      position: relative;
+    }
+
+    .timeline-item:nth-child(odd) {
+      text-align: right;
+      padding-right: 52%;
+    }
+
+    .timeline-item:nth-child(even) {
+      text-align: left;
+      padding-left: 52%;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      border: 3px solid #f8f9fb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+      z-index: 10;
+    }
+
+    .timeline-time {
+      color: #3b82f6;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .timeline-description {
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .timeline-note {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 8px;
+      color: #475569;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .timeline-note .highlight {
+      color: #3b82f6;
+      font-weight: 700;
+    }
+
+    /* GUARANTEE SECTION */
+    .guarantee-section {
+      padding: 80px 20px;
+      margin: 60px auto;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .guarantee-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 30px;
+      border: 3px solid #10b981;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+    }
+
+    .guarantee-label {
+      color: #10b981;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 15px;
+    }
+
+    .guarantee-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .guarantee-text {
+      color: #475569;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .guarantee-text a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .guarantee-text a:hover {
+      text-decoration: underline;
+    }
+
+    /* TESTIMONIALS SECTION */
+    .testimonials-section {
+      padding: 80px 20px;
+      margin: 60px auto;
+      max-width: 1000px;
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+
+    .testimonial-card {
+      background: rgba(15, 23, 42, 0.8);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(59, 130, 246, 0.15);
+    }
+
+    .testimonial-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .testimonial-heading {
+      font-size: 16px;
+      font-weight: 700;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-stars {
+      color: #fbbf24;
+      margin-bottom: 15px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-quote {
+      color: #cbd5e1;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      font-style: italic;
+    }
+
+    .testimonial-author {
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      color: #475569;
+      border-top: 1px solid rgba(59, 130, 246, 0.1);
+      margin-top: 80px;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #0f172a;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero .sub-headline {
+        font-size: 16px;
+      }
+
+      .social-proof-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .in-60-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .timeline:before {
+        left: 20px;
+      }
+
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        text-align: left;
+        padding-left: 80px;
+        padding-right: 0;
+      }
+
+      .timeline-dot {
+        left: 0;
+      }
+
+      .timeline-header h2 {
+        font-size: 32px;
+      }
+
+      .guarantee-heading {
+        font-size: 28px;
+      }
+
+      .testimonials-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-button {
+        padding: 14px 32px;
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 20px 40px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .hero .sub-headline {
+        font-size: 14px;
+      }
+
+      .price-badge {
+        font-size: 11px;
+        padding: 6px 12px;
+      }
+
+      .in-60-list li {
+        font-size: 14px;
+        gap: 12px;
+      }
+
+      .in-60-list li:before {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+      }
+
+      .timeline-header h2 {
+        font-size: 24px;
+      }
+
+      .guarantee-heading {
+        font-size: 22px;
+      }
+
+      .guarantee-text {
+        font-size: 14px;
+      }
+
+      .testimonial-heading {
+        font-size: 14px;
+      }
+
+      .testimonial-quote {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="container">
+      <div class="price-badge">$17 · Instant Access</div>
+      
+      <h1>Your Content Is Working.<br />Your Pipeline <span class="highlight">Isn't.</span></h1>
+      
+      <p class="sub-headline">No GHL. No Clickfunnels. Just strategic copy, smart sequences, and a proven framework.</p>
+      
+      <img src="/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit" class="hero-image" />
+      
+      <button class="cta-button" onclick="document.querySelector('.in-60-minutes').scrollIntoView({behavior: 'smooth'})">Get Instant Access - Only $17</button>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF BAR -->
+  <section class="social-proof-bar">
+    <div class="social-proof-avatar">C</div>
+    <div class="social-proof-content">
+      <div class="social-proof-metric">250 Buyers & 22 Booked Calls in 6 Weeks</div>
+      <div class="social-proof-stars">★ ★ ★ ★ ★</div>
+      <p class="social-proof-quote">"I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it. Within 6 weeks of implementing this framework, we recovered $2.5M+ in lost revenue and saw 3x average conversion increases across our funnels."</p>
+      <div class="social-proof-author">Colin Gallagher <span class="verified-badge">Verified Buyer</span></div>
+    </div>
+  </section>
+
+  <!-- IN 60 MINUTES SECTION -->
+  <section class="in-60-minutes">
+    <div class="container">
+      <h2>In 60 Minutes You Will:</h2>
+      
+      <div class="in-60-grid">
+        <div>
+          <ul class="in-60-list">
+            <li><strong>Identify your exact conversion leak</strong> - I'll pinpoint the specific point where warm leads go cold</li>
+            <li><strong>Get a strategic fix</strong> - Concrete copy changes you can implement immediately</li>
+            <li><strong>Validate your funnel</strong> - Know exactly what's costing you conversions before you rebuild</li>
+            <li><strong>Understand the psychology</strong> - Learn why your current copy isn't working and what does</li>
+            <li><strong>Zero guesswork</strong> - Never rebuild your funnel blindly again</li>
+          </ul>
+        </div>
+        
+        <div class="in-60-image">
+          <img src="/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit Dashboard" />
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- TIMELINE SECTION -->
+  <section class="timeline-section">
+    <div class="timeline-header">
+      <h2>From An Idea to <span class="highlight">Conversion Fix</span> in Literally 60 Minutes</h2>
+      <p>Here's Exactly How It Works</p>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot">1</div>
+        <div class="timeline-time">2:00 PM</div>
+        <div class="timeline-title">You Submit Your Funnel</div>
+        <div class="timeline-description">Share your DMs, sales pages, email sequences, and follow-up systems. That's all I need.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">2</div>
+        <div class="timeline-time">2:18 PM</div>
+        <div class="timeline-title">I Analyze Your Copy</div>
+        <div class="timeline-description">I go through every touchpoint and identify where the conversation breaks down.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">3</div>
+        <div class="timeline-time">2:24 PM</div>
+        <div class="timeline-title">I Find The Leak</div>
+        <div class="timeline-description">The specific point where warm leads are going cold. This is where the fix starts.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">4</div>
+        <div class="timeline-time">2:39 PM</div>
+        <div class="timeline-title">I Build Your Fix</div>
+        <div class="timeline-description">Concrete copy recommendations with before/after comparisons showing exactly what to change.</div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot">5</div>
+        <div class="timeline-time">2:45 PM</div>
+        <div class="timeline-title">You Get Your Audit</div>
+        <div class="timeline-description">Detailed PDF breakdown + 30-min call to discuss implementation. Real results. Real validation.</div>
+      </div>
+
+      <div class="timeline-note">
+        Don't believe me? <span class="highlight">This exact framework has recovered $2.5M+ for my clients.</span><br />
+        I've audited 500+ coaches and consultants. The conversion leak framework works universally.
+>>>>>>> Stashed changes
+      </div>
+    </div>
+  </section>
+
+<<<<<<< Updated upstream
   <!-- QUALIFICATION SECTION -->
   <section class="qualification">
     <div class="qualification-content">
@@ -257,10 +965,49 @@
         <div class="qualification-item">✓ People DM you, there's a back and forth, then the conversation stalls and the lead goes cold</div>
         <div class="qualification-item">✓ You're posting consistently but your revenue doesn't reflect your content output</div>
         <div class="qualification-item">✓ You know the problem isn't your offer — something is breaking between the attention and the close</div>
+=======
+  <!-- GUARANTEE SECTION -->
+  <section class="guarantee-section">
+    <div class="guarantee-icon">✓</div>
+    <div class="guarantee-label">100% Money-Back Guarantee</div>
+    <h2 class="guarantee-heading">Not Happy? You Get Your Money Back.</h2>
+    <p class="guarantee-text">This is a $17 audit. I want you to actually use it and get results. If for any reason you're not satisfied, just email me at <a href="mailto:contact@example.com">contact@example.com</a> and I'll refund you. No questions asked, no hoops to jump through.</p>
+    <p class="guarantee-text">That's how confident I am this works.</p>
+  </section>
+
+  <!-- TESTIMONIALS SECTION -->
+  <section class="testimonials-section">
+    <h2 style="font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; color: #0f172a; margin-bottom: 10px;">Trusted By 500+ Coaches</h2>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">L</div>
+        <div class="testimonial-heading">First Sale After $20 in Adspend</div>
+        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+        <p class="testimonial-quote">"I have used the system to build a stupid number of funnels as I'm using it as a prospecting tool. I think I have done like 20 micro funnels with it. One of the funnels made its first sale last night after $20 in adspend."</p>
+        <div class="testimonial-author">Leon Black <span class="verified-badge">Verified Buyer</span></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">M</div>
+        <div class="testimonial-heading">One of the Best Products Out There</div>
+        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+        <p class="testimonial-quote">"It's really great! One of the best products out there! The framework is so clear and the results speak for themselves."</p>
+        <div class="testimonial-author">Matty Williams <span class="verified-badge">Verified Buyer</span></div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testimonial-avatar">R</div>
+        <div class="testimonial-heading">Best Investment This Year</div>
+        <div class="testimonial-stars">★ ★ ★ ★ ★</div>
+        <p class="testimonial-quote">"Banger of a product! Best investment I've made this year. The conversion fixes alone have paid for this 100x over."</p>
+        <div class="testimonial-author">Ryan Anthony <span class="verified-badge">Verified Buyer</span></div>
+>>>>>>> Stashed changes
       </div>
     </div>
   </section>
 
+<<<<<<< Updated upstream
   <!-- FINAL CTA SECTION -->
   <section class="final-cta">
     <div class="final-cta-content">
@@ -305,10 +1052,19 @@
       </div>
       
       <p class="final-disclaimer">Takes 30 seconds. No spam. Ever.</p>
+=======
+  <!-- FINAL CTA -->
+  <section style="padding: 80px 20px; text-align: center; background: rgba(59, 130, 246, 0.05); border-radius: 16px; margin: 60px auto; max-width: 900px;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: #0f172a; margin-bottom: 20px;">Ready to Fix Your Funnel?</h2>
+      <p style="color: #475569; font-size: 18px; margin-bottom: 30px; line-height: 1.6;">Get your free conversion leak audit. I'll review your funnel within 24 hours and send you a specific breakdown of exactly where it's leaking and what I'd fix first.</p>
+      <button class="cta-button">Get Instant Access - Only $17</button>
+>>>>>>> Stashed changes
     </div>
   </section>
 
   <!-- FOOTER -->
+<<<<<<< Updated upstream
   <footer class="footer">
     <div class="footer-content">
       <p style="font-weight: 600; color: #1a202c;">@samthecopypro</p>
@@ -446,5 +1202,22 @@
 
   <!-- Analytics -->
   <script defer src="%VITE_ANALYTICS_ENDPOINT%/umami" data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"></script>
+=======
+  <footer>
+    <p><strong>The Conversion Leak Audit</strong></p>
+    <p>I identify and fix conversion leaks in DMs, funnels and follow-ups so more attention turns into paying clients.</p>
+    <p>© 2026 All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scroll for CTA buttons
+    document.querySelectorAll('.cta-button').forEach(button => {
+      button.addEventListener('click', () => {
+        // Scroll to top or show form
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+  </script>
+>>>>>>> Stashed changes
 </body>
 </html>
