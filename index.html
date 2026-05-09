@@ -1,84 +1,671 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Conversion Leak Audit - Find where your funnel stops converting and fix it. For coaches and personal brands.">
-  <meta name="keywords" content="conversion optimization, funnel audit, copywriting, coaching">
-  <meta name="author" content="@samthecopypro">
-  <meta property="og:title" content="The Conversion Leak Audit">
-  <meta property="og:description" content="Find the exact point where your funnel stops converting people who were already ready to buy — and fix it.">
-  <meta property="og:type" content="website">
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   <title>The Conversion Leak Audit - Free Funnel Review</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect fill='%23ff2d2d' width='100' height='100'/><text x='50' y='65' font-size='60' font-weight='bold' text-anchor='middle' fill='white'>C</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary-bg: #0e0e12;
+      --primary-text: #ffffff;
+      --primary-accent: #2563eb;
+      --secondary-accent: #4F7FFF;
+      --text-secondary: #c8c8d8;
+      --text-tertiary: #c0c0cc;
+      --text-dark: #0f172a;
+      --text-medium: #475569;
+      --border-color: rgba(37, 99, 235, 0.2);
+      --card-bg: rgba(15, 23, 42, 0.8);
+      --card-bg-light: rgba(37, 99, 235, 0.05);
+      --success-color: #10b981;
+      --gold-color: #fbbf24;
+      --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+      --shadow-md: 0 10px 25px rgba(0, 0, 0, 0.15);
+      --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.15);
+      --shadow-blue: 0 4px 20px rgba(37, 99, 235, 0.3);
+      --transition-base: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--primary-bg);
+      color: var(--primary-text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* STICKY HEADER */
+    .sticky-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(14, 14, 18, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border-color);
+      z-index: 1000;
+      padding: 15px 40px;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .sticky-header.visible {
+      display: flex;
+    }
+
+    .sticky-header-content {
+      flex: 1;
+    }
+
+    .sticky-header-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--primary-text);
+      margin-bottom: 5px;
+    }
+
+    .sticky-header-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .sticky-header-cta {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%);
+      color: var(--primary-text);
+      padding: 10px 24px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: var(--shadow-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-left: 20px;
+      flex-shrink: 0;
+    }
+
+    .sticky-header-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 100px 40px 60px;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      font-size: 56px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--primary-text);
+      letter-spacing: -0.02em;
+    }
+
+    .hero-headline-caps {
+      font-size: 36px !important;
+      font-weight: 400 !important;
+      line-height: 1.25 !important;
+      margin-bottom: 40px !important;
+      color: var(--primary-text) !important;
+      letter-spacing: -0.02em !important;
+      text-align: center !important;
+      text-transform: uppercase !important;
+      font-family: 'Anton', sans-serif !important;
+    }
+
+    .hero-headline-caps .highlight {
+      color: var(--primary-accent) !important;
+    }
+
+    /* CENTERED PRICE BADGE - PILL STYLE */
+    .price-badge-centered {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.5) !important;
+      border: 1px solid rgba(239, 68, 68, 0.25) !important;
+      padding: 12px 20px !important;
+      border-radius: 50px !important;
+      font-size: 12px;
+      font-weight: 700;
+      font-family: 'Space Mono', monospace !important;
+      color: #ef4444 !important;
+      margin: 0 auto 30px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      width: fit-content;
+      position: relative;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .price-badge-centered:hover {
+      background: rgba(0, 0, 0, 0.7) !important;
+      border-color: rgba(239, 68, 68, 0.5) !important;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), inset 0 0 20px rgba(239, 68, 68, 0.1);
+      transform: translateY(-2px);
+    }
+
+    /* GLOWING RED DOT */
+    .price-badge-centered::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #ef4444;
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+      flex-shrink: 0;
+      animation: pulse-red 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-red {
+      0%, 100% {
+        box-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 8px rgba(239, 68, 68, 0.8), 0 0 15px rgba(239, 68, 68, 0.4), 0 0 20px rgba(239, 68, 68, 0.2);
+      }
+    }
+
+    .hero h1 .highlight {
+      color: var(--primary-accent);
+    }
+
+    .hero .sub-headline {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .sub-headline-centered {
+      font-size: 18px !important;
+      color: #FFFFFF !important;
+      margin-bottom: 50px !important;
+      font-weight: 280 !important;
+      text-align: center !important;
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      line-height: 1.6 !important;
+      letter-spacing: 0.01em !important;
+      -webkit-font-smoothing: antialiased !important;
+      text-shadow: 0 2px 8px rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .hero-image {
+      max-width: 600px;
+      width: 100%;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* VIDEO CONTAINER */
+    .video-container {
+      margin: 50px auto;
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(37, 99, 235, 0.3), 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 12px;
+    }
+
+    /* HERO CTA WRAPPER */
+    .hero-cta-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 50px auto;
+      width: 100%;
+    }
+
+    .hero-cta-button {
+      background: #ef4444;
+      color: var(--primary-text);
+      padding: 18px 48px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.5), 0 10px 40px rgba(0, 0, 0, 0.2);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      min-width: 300px;
+    }
+
+    .hero-cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 0 50px rgba(239, 68, 68, 0.7), 0 15px 50px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-cta-button:active {
+      transform: translateY(-1px);
+    }
+
+    /* HERO MICROCOPY */
+    .hero-microcopy {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 15px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-align: center;
+    }
+
+    /* MAILERLITE FORM STYLING */
+    #mlb2-40775934.ml-form-embedContainer {
+      margin: 40px auto !important;
+      max-width: 600px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedWrapper {
+      background-color: transparent !important;
+      border: none !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody {
+      padding: 0 !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent {
+      text-align: center;
+      margin: 0 !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent h4 {
+      color: var(--primary-text) !important;
+      font-size: 24px !important;
+      font-weight: 700 !important;
+      margin-bottom: 15px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-embedContent p {
+      color: var(--text-secondary) !important;
+      font-size: 16px !important;
+      margin-bottom: 20px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input {
+      background-color: var(--primary-text) !important;
+      color: var(--text-dark) !important;
+      border: 1px solid var(--border-color) !important;
+      border-radius: 8px !important;
+      padding: 14px 16px !important;
+      font-size: 16px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow input::placeholder {
+      color: var(--text-medium) !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow button {
+      background: linear-gradient(135deg, var(--primary-accent) 0%, #1d4ed8 100%) !important;
+      color: var(--primary-text) !important;
+      padding: 14px 32px !important;
+      border-radius: 8px !important;
+      font-size: 14px !important;
+      font-weight: 700 !important;
+      border: none !important;
+      cursor: pointer !important;
+      transition: var(--transition-base) !important;
+      box-shadow: var(--shadow-blue) !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.05em !important;
+      width: 100% !important;
+      margin-top: 10px !important;
+    }
+
+    #mlb2-40775934.ml-form-embedContainer .ml-form-embedBody .ml-form-fieldRow button:hover {
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 30px rgba(37, 99, 235, 0.4) !important;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: var(--primary-bg);
+      border-top: 1px solid var(--border-color);
+      padding: 60px 40px;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .footer-content p:first-child {
+      font-weight: 600;
+      color: var(--primary-text);
+      margin-bottom: 15px;
+    }
+
+    /* EXIT INTENT POPUP */
+    .exit-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      backdrop-filter: blur(4px);
+    }
+
+    .exit-popup.show {
+      display: flex;
+    }
+
+    .exit-popup-content {
+      background: var(--primary-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .exit-popup-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: var(--text-secondary);
+      font-size: 24px;
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .exit-popup-close:hover {
+      color: var(--primary-text);
+    }
+
+    .exit-popup-content h3 {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--primary-text);
+      margin-bottom: 15px;
+    }
+
+    .exit-popup-content p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .exit-popup-offer {
+      font-weight: 600;
+      color: #ef4444;
+      margin-bottom: 20px !important;
+    }
+
+    .exit-popup-btn {
+      background: #ef4444;
+      color: var(--primary-text);
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: 100%;
+    }
+
+    .exit-popup-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 50px rgba(239, 68, 68, 0.7);
+    }
+
+    /* ENHANCED CTA FORM STYLING */
+    .ml-form-embedContainer {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(239, 68, 68, 0.05) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.2);
+      border-radius: 16px;
+      padding: 50px 40px;
+      margin: 60px 0;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(37, 99, 235, 0.1);
+    }
+
+    .ml-form-embedContainer .form-control {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      color: var(--primary-text);
+      padding: 16px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      transition: var(--transition-base);
+      width: 100%;
+    }
+
+    .ml-form-embedContainer .form-control:focus {
+      outline: none;
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--primary-accent);
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+    }
+
+    .ml-form-embedContainer .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .ml-form-embedContainer .primary {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: var(--primary-text);
+      padding: 16px 48px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: var(--transition-base);
+      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      width: 100%;
+      margin-top: 16px;
+    }
+
+    .ml-form-embedContainer .primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 36px rgba(239, 68, 68, 0.6);
+      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    }
+
+    .ml-form-embedContainer .primary:active {
+      transform: translateY(-1px);
+    }
+
+    .ml-form-fieldRow {
+      margin-bottom: 0;
+    }
+
+    .ml-form-embedSubmit {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 20px 40px;
+      }
+
+      .hero h1,
+      .hero-headline-caps {
+        font-size: 32px !important;
+      }
+
+      .hero .sub-headline,
+      .sub-headline-centered {
+        font-size: 16px !important;
+      }
+
+      .hero-cta-button {
+        min-width: 100%;
+        padding: 16px 32px;
+      }
+
+      .sticky-header {
+        padding: 12px 20px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .footer {
+        padding: 40px 20px;
+      }
+
+      .exit-popup-content {
+        padding: 30px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- STICKY SMART HEADER - FIXED -->
+  <!-- STICKY HEADER -->
   <header class="sticky-header" id="stickyHeader">
     <div class="sticky-header-content">
-      <div class="sticky-logo">Conversion Leak Audit</div>
-      <div class="sticky-countdown">Only <span id="spotsLeft">3</span> spots left</div>
-      <button class="sticky-cta-btn" onclick="document.getElementById('hero-form').scrollIntoView({behavior: 'smooth'})">Get Audit</button>
+      <h3>The Conversion Leak Audit</h3>
+      <p>Get your free funnel audit within 24 hours</p>
     </div>
+    <button class="sticky-header-cta" onclick="document.getElementById('mlb2-40775934').scrollIntoView({behavior: 'smooth'})">Get Audit</button>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero">
-    <div class="hero-content">
-      <div class="hero-left">
-        <p class="hero-eyebrow">For coaches and personal brands getting attention but not clients</p>
-        
-        <h1>Your Content Is Working.<br>Your Pipeline Isn't.</h1>
-        
-        <p class="hero-deck">
-          I find the exact point where your funnel stops converting people who were already ready to buy — and I fix it.
-        </p>
+    <div class="container">
+      <div class="price-badge-centered">ATTENTION COACHES AND PERSONAL BRANDS GETTING ENGAGEMENT BUT STILL LOOSING SOME CLIENTS</div>
+      
+      <h1 class="hero-headline-caps">GET A FREE CONVERSION LEAK AUDIT AND DISCOVER <span class="highlight">WHERE YOU'RE LOSING PEOPLE</span> WHO are ready to buy YOUR OFFER</h1>
+      
+      <p class="sub-headline-centered">Within 24 hours I will send you a specific breakdown of the exact point where warm leads are going cold, and what to fix first.</p>
 
-        <div class="hero-form-wrapper" id="hero-form">
-          <div id="mlb2-40775934" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40775934">
-            <div class="ml-form-align-center ">
-              <div class="ml-form-embedWrapper embedForm">
-                <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                  <div class="ml-form-embedContent" style="margin-bottom: 0px; ">
-                  </div>
-                  <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2090592/forms/186512759014295403/subscribe" data-code="" method="post" target="_blank">
-                    <div class="ml-form-formContent">
-                      <div class="ml-form-fieldRow ml-last-item">
-                        <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
-                          <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your best email here" autocomplete="email">
-                        </div>
-                      </div>
+      <!-- VIDEO CONTAINER -->
+      <div class="video-container">
+        <div class="video-wrapper">
+          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="The Conversion Leak Audit" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- MAILERLITE FORM -->
+      <div id="mlb2-40775934" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40775934">
+        <div class="ml-form-align-center">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent" style="margin-bottom: 0px;">
+              </div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2090592/forms/186512759014295403/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Enter your best email here" autocomplete="email">
                     </div>
-                    <input type="hidden" name="ml-submit" value="1">
-                    <div class="ml-form-embedSubmit">
-                      <button type="submit" class="primary">Get My Free Audit</button>
-                      <button disabled="disabled" style="display: none;" type="button" class="loading">
-                        <div class="ml-form-embedSubmitLoad"></div>
-                        <span class="sr-only">Loading...</span>
-                      </button>
-                    </div>
-                    <input type="hidden" name="anticsrf" value="true">
-                  </form>
-                </div>
-                <div class="ml-form-successBody row-success" style="display: none">
-                  <div class="ml-form-successContent">
-                    <h4>Perfect!</h4>
-                    <p>You have successfully signed up for your free funnel audit!&nbsp;</p>
-                    <p>Sam will reach you within 24 hours.</p>
                   </div>
                 </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Get My Free Audit</button>
+                  <button disabled="disabled" style="display: none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent">
+                <h4>Perfect!</h4>
+                <p>You have successfully signed up for your free funnel audit!</p>
+                <p>Sam will reach you within 24 hours.</p>
               </div>
             </div>
           </div>
         </div>
-
-        <p class="hero-disclaimer">Takes 30 seconds. No spam. Ever.</p>
       </div>
 
-      <div class="hero-right">
-        <img src="https://convleak-dcgy5qps.manus.space/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit Dashboard" class="hero-image">
+      <p class="hero-microcopy">Takes 30 seconds. No spam. Ever.</p>
+
+      <!-- HERO IMAGE -->
+      <div class="hero-image">
+        <img src="https://convleak-dcgy5qps.manus.space/manus-storage/offer_mockup_verification_9c2adb9b.png" alt="The Conversion Leak Audit Dashboard">
       </div>
     </div>
   </section>
@@ -99,35 +686,26 @@
       <h3>Wait! Don't Leave Yet</h3>
       <p>Get your free funnel audit before you go.</p>
       <p class="exit-popup-offer">Book today and I'll prioritize your audit. Response within 12 hours.</p>
-      <button class="exit-popup-btn" onclick="document.getElementById('hero-form').scrollIntoView({behavior: 'smooth'}); closeExitPopup();">Get My Free Audit</button>
+      <button class="exit-popup-btn" onclick="document.getElementById('mlb2-40775934').scrollIntoView({behavior: 'smooth'}); closeExitPopup();">Get My Free Audit</button>
     </div>
   </div>
 
   <!-- SCRIPTS -->
   <script>
     // ========================================
-    // FIXED STICKY HEADER
+    // STICKY HEADER SCROLL BEHAVIOR
     // ========================================
     let lastScrollTop = 0;
-    let scrollTimeout;
     const stickyHeader = document.getElementById('stickyHeader');
     const scrollThreshold = 300;
 
     window.addEventListener('scroll', function() {
-      clearTimeout(scrollTimeout);
       let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
       if (currentScroll > scrollThreshold) {
-        if (currentScroll < lastScrollTop) {
-          // Scrolling UP - show header
-          stickyHeader.classList.add('show');
-        } else {
-          // Scrolling DOWN - hide header
-          stickyHeader.classList.remove('show');
-        }
+        stickyHeader.classList.add('visible');
       } else {
-        // At top - hide header
-        stickyHeader.classList.remove('show');
+        stickyHeader.classList.remove('visible');
       }
 
       lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
@@ -154,15 +732,6 @@
       const popup = document.getElementById('exitPopup');
       popup.classList.remove('show');
     }
-
-    // ========================================
-    // GOOGLE ANALYTICS
-    // ========================================
-    // Add your Google Analytics tracking code here
-    // window.dataLayer = window.dataLayer || [];
-    // function gtag(){dataLayer.push(arguments);}
-    // gtag('js', new Date());
-    // gtag('config', 'GA_MEASUREMENT_ID');
   </script>
 
   <!-- MailerLite Script -->
