@@ -161,6 +161,15 @@
       width: fit-content;
       position: relative;
       backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .price-badge-centered:hover {
+      background: rgba(0, 0, 0, 0.7) !important;
+      border-color: rgba(239, 68, 68, 0.5) !important;
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), inset 0 0 20px rgba(239, 68, 68, 0.1);
+      transform: translateY(-2px);
     }
 
     /* GLOWING RED DOT */
