@@ -698,7 +698,7 @@
       max-width: 1000px;
     }
 
-    /* CAROUSEL STYLES */
+    /* STACKED CARD SLIDER STYLES */
     .carousel-section {
       padding: 80px 20px;
       background: var(--primary-bg);
@@ -712,46 +712,79 @@
       backdrop-filter: none;
       border: none;
       border-radius: 0;
-      padding: 20px;
-      overflow: hidden;
+      padding: 40px 20px;
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
     .carousel-wrapper {
       position: relative;
       width: 100%;
-      overflow: hidden;
+      height: 600px;
+      overflow: visible;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
 
     .carousel-track {
-      display: flex;
-      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      width: 100%;
-      gap: 20px;
+      position: relative;
+      width: 320px;
+      height: 520px;
+      perspective: 1000px;
     }
 
     .carousel-slide {
-      min-width: 280px;
-      flex-shrink: 0;
+      position: absolute;
+      width: 280px;
+      height: 500px;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
       padding: 0;
       display: flex;
       justify-content: center;
+      align-items: center;
+      cursor: grab;
+      touch-action: none;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 10;
+    }
+
+    .carousel-slide.swiping {
+      transition: none;
+    }
+
+    .carousel-slide.next {
+      z-index: 9;
+      transform: translateX(-50%) translateY(-50%) scale(0.95) rotateY(10deg);
+      opacity: 0.7;
+    }
+
+    .carousel-slide.next-next {
+      z-index: 8;
+      transform: translateX(-50%) translateY(-50%) scale(0.9) rotateY(20deg);
+      opacity: 0.5;
     }
 
     .slide-content {
-      background: rgba(30, 30, 40, 0.8);
-      border: 1px solid rgba(37, 99, 235, 0.3);
+      background: rgba(30, 30, 40, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 24px;
       padding: 12px;
-      width: 280px;
-      height: 500px;
+      width: 100%;
+      height: 100%;
       aspect-ratio: 9 / 16;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     }
 
     .slide-content img {
@@ -1492,7 +1525,13 @@
       carouselData.forEach((slide, index) => {
         const slideDiv = document.createElement('div');
         slideDiv.className = 'carousel-slide';
+        if (index === 0) slideDiv.classList.add('active');
+        if (index === 1) slideDiv.classList.add('next');
+        if (index === 2) slideDiv.classList.add('next-next');
         slideDiv.innerHTML = generateSlideContent(slide);
+        slideDiv.addEventListener('mousedown', handleMouseDown);
+        slideDiv.addEventListener('touchstart', handleTouchStart);
+        slideDiv.addEventListener('touchend', handleTouchEnd);
         track.appendChild(slideDiv);
 
         // Generate dots
@@ -1505,12 +1544,52 @@
       startAutoPlay();
     }
 
-    function generateSlideContent(slide) {
-      const content = document.createElement('div');
-      content.className = 'slide-content';
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let isDragging = false;
 
+    function handleMouseDown(e) {
+      isDragging = true;
+      touchStartX = e.clientX;
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    }
+
+    function handleMouseMove(e) {
+      if (!isDragging) return;
+      touchEndX = e.clientX;
+    }
+
+    function handleMouseUp() {
+      isDragging = false;
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+      handleSwipe();
+    }
+
+    function handleTouchStart(e) {
+      touchStartX = e.touches[0].clientX;
+    }
+
+    function handleTouchEnd(e) {
+      touchEndX = e.changedTouches[0].clientX;
+      handleSwipe();
+    }
+
+    function handleSwipe() {
+      const diff = touchStartX - touchEndX;
+      if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+          moveCarousel(1);
+        } else {
+          moveCarousel(-1);
+        }
+      }
+    }
+
+    function generateSlideContent(slide) {
       if (slide.type === 'image') {
-        return `<img src="${slide.image}" alt="${slide.title}" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;" />`;
+        return `<img src="${slide.image}" alt="${slide.title}" style="width: 100%; height: 100%; border-radius: 12px; object-fit: cover;" />`;
       } else if (slide.type === 'dm') {
         let html = `<div class="dm-mockup"><div class="dm-header"><div class="dm-avatar">C</div><div class="dm-name">${slide.title}</div></div>`;
         slide.messages.forEach(msg => {
@@ -1549,9 +1628,14 @@
     }
 
     function updateCarousel() {
-      const track = document.getElementById('carouselTrack');
-      const offset = -currentIndex * 100;
-      track.style.transform = `translateX(${offset}%)`;
+      const slides = document.querySelectorAll('.carousel-slide');
+      slides.forEach((slide, index) => {
+        slide.classList.remove('active', 'next', 'next-next');
+        const relativeIndex = (index - currentIndex + carouselData.length) % carouselData.length;
+        if (relativeIndex === 0) slide.classList.add('active');
+        else if (relativeIndex === 1) slide.classList.add('next');
+        else if (relativeIndex === 2) slide.classList.add('next-next');
+      });
 
       // Update dots
       document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
