@@ -142,19 +142,23 @@
       color: var(--primary-accent) !important;
     }
 
+    .hero-headline-caps .highlight-red {
+      color: #ff0000 !important;
+    }
+
     /* CENTERED PRICE BADGE - PILL STYLE */
     .price-badge-centered {
       display: inline-flex;
       align-items: center;
       gap: 10px;
       background: rgba(0, 0, 0, 0.5) !important;
-      border: 1px solid rgba(239, 68, 68, 0.25) !important;
+      border: 1px solid rgba(255, 0, 0, 0.4) !important;
       padding: 12px 20px !important;
       border-radius: 50px !important;
       font-size: 12px;
       font-weight: 700;
       font-family: 'Space Mono', monospace !important;
-      color: #ef4444 !important;
+      color: #ff0000 !important;
       margin: 0 auto 30px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
@@ -167,8 +171,8 @@
 
     .price-badge-centered:hover {
       background: rgba(0, 0, 0, 0.7) !important;
-      border-color: rgba(239, 68, 68, 0.5) !important;
-      box-shadow: 0 0 20px rgba(239, 68, 68, 0.3), inset 0 0 20px rgba(239, 68, 68, 0.1);
+      border-color: rgba(255, 0, 0, 0.6) !important;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4), inset 0 0 20px rgba(255, 0, 0, 0.2);
       transform: translateY(-2px);
     }
 
@@ -178,19 +182,19 @@
       display: inline-block;
       width: 8px;
       height: 8px;
-      background: #ef4444;
+      background: #ff0000;
       border-radius: 50%;
-      box-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+      box-shadow: 0 0 12px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3);
       flex-shrink: 0;
       animation: pulse-red 2s ease-in-out infinite;
     }
 
     @keyframes pulse-red {
       0%, 100% {
-        box-shadow: 0 0 12px rgba(239, 68, 68, 1), 0 0 20px rgba(239, 68, 68, 0.6), 0 0 30px rgba(239, 68, 68, 0.3);
+        box-shadow: 0 0 12px rgba(255, 0, 0, 1), 0 0 20px rgba(255, 0, 0, 0.6), 0 0 30px rgba(255, 0, 0, 0.3);
       }
       50% {
-        box-shadow: 0 0 8px rgba(239, 68, 68, 0.8), 0 0 15px rgba(239, 68, 68, 0.4), 0 0 20px rgba(239, 68, 68, 0.2);
+        box-shadow: 0 0 8px rgba(255, 0, 0, 0.8), 0 0 15px rgba(255, 0, 0, 0.4), 0 0 20px rgba(255, 0, 0, 0.2);
       }
     }
 
@@ -271,7 +275,7 @@
     }
 
     .hero-cta-button {
-      background: #ef4444;
+      background: #ff0000;
       color: var(--primary-text);
       padding: 18px 48px;
       border-radius: 8px;
@@ -282,7 +286,7 @@
       border: none;
       cursor: pointer;
       transition: var(--transition-base);
-      box-shadow: 0 0 30px rgba(239, 68, 68, 0.5), 0 10px 40px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.6), 0 10px 40px rgba(0, 0, 0, 0.2);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       min-width: 300px;
@@ -290,7 +294,7 @@
 
     .hero-cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 0 50px rgba(239, 68, 68, 0.7), 0 15px 50px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 50px rgba(255, 0, 0, 0.8), 0 15px 50px rgba(0, 0, 0, 0.3);
     }
 
     .hero-cta-button:active {
@@ -453,6 +457,7 @@
       font-weight: 700;
       color: var(--primary-text);
       margin-bottom: 15px;
+      font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     }
 
     .exit-popup-content p {
@@ -464,12 +469,12 @@
 
     .exit-popup-offer {
       font-weight: 600;
-      color: #ef4444;
+      color: #ff0000;
       margin-bottom: 20px !important;
     }
 
     .exit-popup-btn {
-      background: #ef4444;
+      background: #ff0000;
       color: var(--primary-text);
       padding: 14px 32px;
       border-radius: 8px;
@@ -478,7 +483,7 @@
       border: none;
       cursor: pointer;
       transition: var(--transition-base);
-      box-shadow: 0 0 30px rgba(239, 68, 68, 0.5);
+      box-shadow: 0 0 30px rgba(255, 0, 0, 0.6);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       width: 100%;
@@ -486,7 +491,7 @@
 
     .exit-popup-btn:hover {
       transform: translateY(-2px);
-      box-shadow: 0 0 50px rgba(239, 68, 68, 0.7);
+      box-shadow: 0 0 50px rgba(255, 0, 0, 0.8);
     }
 
     /* ENHANCED CTA FORM STYLING */
@@ -523,7 +528,7 @@
     }
 
     .ml-form-embedContainer .primary {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      background: linear-gradient(135deg, #ff0000 0%, #cc0000 100%);
       color: var(--primary-text);
       padding: 16px 48px;
       border-radius: 10px;
@@ -532,7 +537,7 @@
       border: none;
       cursor: pointer;
       transition: var(--transition-base);
-      box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);
+      box-shadow: 0 8px 24px rgba(255, 0, 0, 0.5);
       text-transform: uppercase;
       letter-spacing: 0.05em;
       width: 100%;
@@ -541,8 +546,8 @@
 
     .ml-form-embedContainer .primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 12px 36px rgba(239, 68, 68, 0.6);
-      background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+      box-shadow: 0 12px 36px rgba(255, 0, 0, 0.7);
+      background: linear-gradient(135deg, #cc0000 0%, #990000 100%);
     }
 
     .ml-form-embedContainer .primary:active {
@@ -603,7 +608,7 @@
   <header class="sticky-header" id="stickyHeader">
     <div class="sticky-header-content">
       <h3>The Conversion Leak Audit</h3>
-      <p>Get your free funnel audit within 24 hours</p>
+      <p>Get your funnel leak breakdown in 24 hours.</p>
     </div>
     <button class="sticky-header-cta" onclick="document.getElementById('mlb2-40775934').scrollIntoView({behavior: 'smooth'})">Get Audit</button>
   </header>
@@ -613,14 +618,14 @@
     <div class="container">
       <div class="price-badge-centered">ATTENTION COACHES AND PERSONAL BRANDS GETTING ENGAGEMENT BUT STILL LOOSING SOME CLIENTS</div>
       
-      <h1 class="hero-headline-caps">GET A FREE CONVERSION LEAK AUDIT AND DISCOVER <span class="highlight">WHERE YOU'RE LOSING PEOPLE</span> WHO are ready to buy YOUR OFFER</h1>
+      <h1 class="hero-headline-caps">Discover Exactly Why <span class="highlight">Warm Leads Aren’t Buying</span> And What’s <span class="highlight-red">Killing</span> Your Conversions</h1>
       
       <p class="sub-headline-centered">Within 24 hours I will send you a specific breakdown of the exact point where warm leads are going cold, and what to fix first.</p>
 
       <!-- VIDEO CONTAINER -->
       <div class="video-container">
         <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="The Conversion Leak Audit" allowfullscreen></iframe>
+          <iframe src="https://www.youtube.com/embed/D_6yvXXh_dI" title="The Conversion Leak Audit" allowfullscreen></iframe>
         </div>
       </div>
 
@@ -684,9 +689,9 @@
     <div class="exit-popup-content">
       <button class="exit-popup-close" onclick="closeExitPopup()">✕</button>
       <h3>Wait! Don't Leave Yet</h3>
-      <p>Get your free funnel audit before you go.</p>
-      <p class="exit-popup-offer">Book today and I'll prioritize your audit. Response within 12 hours.</p>
-      <button class="exit-popup-btn" onclick="document.getElementById('mlb2-40775934').scrollIntoView({behavior: 'smooth'}); closeExitPopup();">Get My Free Audit</button>
+      <p>Warm buyers may already be slipping through your funnel.</p>
+      <p class="exit-popup-offer">Get a free Conversion Leak Breakdown within 12 hours.</p>
+      <button class="exit-popup-btn" onclick="document.getElementById('mlb2-40775934').scrollIntoView({behavior: 'smooth'}); closeExitPopup();">reveal the leak</button>
     </div>
   </div>
 
